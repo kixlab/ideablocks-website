@@ -389,7 +389,11 @@ export function PDR() {
 
           {/* Right: Description panel */}
           <div className="bg-white border border-slate-200 rounded-xl p-7 min-h-[240px] shadow-sm">
-            <PanelContent component={selected} />
+            {tabComponents.map((comp) => (
+              <div key={comp} style={{ display: comp === selected ? "block" : "none" }}>
+                <PanelContent component={comp} />
+              </div>
+            ))}
           </div>
         </div>
 

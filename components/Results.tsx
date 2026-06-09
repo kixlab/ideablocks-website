@@ -58,7 +58,7 @@ function StatCard({
   active: boolean;
   onHover: (label: string | null) => void;
 }) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(stat.target);
   const triggered = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
 
