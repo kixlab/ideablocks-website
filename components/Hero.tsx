@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, type ReactNode } from "react";
 import { FaGithub, FaLink } from "react-icons/fa6";
 import { SiArxiv } from "react-icons/si";
 import { GuideHint } from "./GuideHint";
@@ -59,6 +59,92 @@ const authors = [
     photo: "/assets/authors/juho.jpg",
   },
 ];
+
+interface TLDRCardData {
+  href: string;
+  icon: string;
+  frontBody: ReactNode;
+  backBody: string;
+  cta: string;
+}
+
+const tldrCards: TLDRCardData[] = [
+  {
+    href: "#pdr",
+    icon: "🔍",
+    frontBody: (
+      <>
+        Divergent intent can be decomposed into{" "}
+        <span className="font-semibold" style={{ color: "#1D6FEB" }}>
+          Property
+        </span>
+        ,{" "}
+        <span className="font-semibold" style={{ color: "#D4740A" }}>
+          Direction
+        </span>
+        , and{" "}
+        <span className="font-semibold" style={{ color: "#6E30D8" }}>
+          Range
+        </span>
+      </>
+    ),
+    backBody:
+      "See how the divergent intent is decomposed into three dimensions: Property, Direction & Range",
+    cta: "Explore the framework →",
+  },
+  {
+    href: "#demo",
+    icon: "🧩",
+    frontBody: (
+      <>
+        IdeaBlocks modularizes divergent intents into reusable{" "}
+        <span className="font-semibold text-slate-800">Exploration Blocks</span> — shareable across
+        Block, Path, and Project levels.
+      </>
+    ),
+    backBody: "Create Exploration Blocks, chain properties, and see block reuse in action",
+    cta: "Try IdeaBlocks demo →",
+  },
+  {
+    href: "#results",
+    icon: "📊",
+    frontBody: (
+      <>
+        Users generated <span className="font-semibold text-slate-800">2.13× more images</span> with{" "}
+        <span className="font-semibold text-slate-800">12.5% greater diversity</span>; a 3-day study
+        revealed diverse intent reuse strategies.
+      </>
+    ),
+    backBody: "See how IdeaBlocks supports divergent exploration and reuse, through two studies.",
+    cta: "View results →",
+  },
+];
+
+function TLDRFlipCard({ href, icon, frontBody, backBody, cta }: TLDRCardData) {
+  return (
+    <a href={href} className="flip-card block h-full" style={{ perspective: "1000px" }}>
+      <div className="flip-card-inner w-full h-full" style={{ display: "grid" }}>
+        <div
+          className="flip-card-front rounded-2xl border border-slate-200 bg-slate-50 px-6 py-6 flex flex-col gap-3 overflow-hidden"
+          style={{ gridArea: "1/1", minHeight: 0 }}
+        >
+          <span className="text-xl">{icon}</span>
+          <p className="text-[0.88rem] text-slate-600 leading-relaxed">{frontBody}</p>
+        </div>
+        <div
+          className="flip-card-back rounded-2xl border border-slate-200 bg-white flex flex-col items-center justify-center gap-2 px-6 text-center overflow-hidden"
+          style={{ gridArea: "1/1", minHeight: 0 }}
+        >
+          <span className="text-2xl mb-1">{icon}</span>
+          <p className="text-xs text-slate-500 leading-relaxed">{backBody}</p>
+          <span className="text-xs font-semibold mt-2" style={{ color: "#4338CA" }}>
+            {cta}
+          </span>
+        </div>
+      </div>
+    </a>
+  );
+}
 
 function initials(name: string) {
   return name
@@ -204,8 +290,8 @@ export function Hero() {
               IdeaBlocks
             </span>
             <span className="block text-[clamp(1.25rem,2.2vw,1.55rem)] text-slate-600 font-semibold leading-snug">
-              <span className="md-linebreak">Expressing and Reusing Divergent Intents for</span>
-              {" "}Graphic Design Exploration using Generative AI
+              <span className="md-linebreak">Expressing and Reusing Divergent Intents for</span>{" "}
+              Graphic Design Exploration using Generative AI
             </span>
           </div>
         </h1>
@@ -258,106 +344,94 @@ export function Hero() {
 
         {/* TL;DR cards */}
         <p className="text-2xl font-bold text-slate-800 mb-1">TL;DR</p>
-        <GuideHint text="Hover each card to jump to the relevant section" className="justify-center mb-4" />
-        <div className="max-w-[860px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
-          {/* Card 1 — Divergent Intent Framework */}
-          <a
-            href="#pdr"
-            className="flip-card block"
-            style={{ perspective: "1000px", minHeight: 220 }}
-          >
-            <div className="flip-card-inner relative w-full" style={{ minHeight: 220 }}>
-              <div className="flip-card-front absolute inset-0 rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5 flex flex-col gap-3 overflow-hidden">
-                <span className="text-xl">🔍</span>
-                <p className="text-[0.88rem] text-slate-600 leading-relaxed">
-                  Divergent intent can be decomposed into{" "}
-                  <span className="font-semibold" style={{ color: "#1D6FEB" }}>
-                    Property
-                  </span>
-                  ,{" "}
-                  <span className="font-semibold" style={{ color: "#D4740A" }}>
-                    Direction
-                  </span>
-                  , and{" "}
-                  <span className="font-semibold" style={{ color: "#6E30D8" }}>
-                    Range
-                  </span>{" "}
-                  — yet current GenAI tools lack mechanisms to express or reuse it.
-                </p>
-              </div>
-              <div className="flip-card-back absolute inset-0 rounded-2xl border border-slate-200 bg-white flex flex-col items-center justify-center gap-2 px-6 text-center overflow-hidden">
-                <span className="text-2xl mb-1">🔍</span>
-                <p className="text-sm font-bold text-slate-800">Divergent Intent Framework</p>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  How we formalized divergent intent into three composable dimensions: Property,
-                  Direction &amp; Range
-                </p>
-                <span className="text-xs font-semibold mt-2" style={{ color: "#4338CA" }}>
-                  Explore the framework →
-                </span>
-              </div>
-            </div>
-          </a>
-
-          {/* Card 2 — The System */}
-          <a
-            href="#demo"
-            className="flip-card block"
-            style={{ perspective: "1000px", minHeight: 220 }}
-          >
-            <div className="flip-card-inner relative w-full" style={{ minHeight: 220 }}>
-              <div className="flip-card-front absolute inset-0 rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5 flex flex-col gap-3 overflow-hidden">
-                <span className="text-xl">🧩</span>
-                <p className="text-[0.88rem] text-slate-600 leading-relaxed">
-                  IdeaBlocks modularizes divergent intents into reusable{" "}
-                  <span className="font-semibold text-slate-800">Exploration Blocks</span> — shareable
-                  across Block, Path, and Project levels.
-                </p>
-              </div>
-              <div className="flip-card-back absolute inset-0 rounded-2xl border border-slate-200 bg-white flex flex-col items-center justify-center gap-2 px-6 text-center overflow-hidden">
-                <span className="text-2xl mb-1">🧩</span>
-                <p className="text-sm font-bold text-slate-800">Try the IdeaBlocks Demo!</p>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Create Exploration Blocks, chain properties, and see block reuse in action
-                </p>
-                <span className="text-xs font-semibold mt-2" style={{ color: "#4338CA" }}>
-                  Try the demo →
-                </span>
-              </div>
-            </div>
-          </a>
-
-          {/* Card 3 — Comparative Study */}
-          <a
-            href="#results"
-            className="flip-card block"
-            style={{ perspective: "1000px", minHeight: 220 }}
-          >
-            <div className="flip-card-inner relative w-full" style={{ minHeight: 220 }}>
-              <div className="flip-card-front absolute inset-0 rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5 flex flex-col gap-3 overflow-hidden">
-                <span className="text-xl">📊</span>
-                <p className="text-[0.88rem] text-slate-600 leading-relaxed">
-                  Users generated{" "}
-                  <span className="font-semibold text-slate-800">2.13× more images</span> with{" "}
-                  <span className="font-semibold text-slate-800">12.5% greater diversity</span>; a
-                  3-day study revealed distinct reuse strategies across all three levels.
-                </p>
-              </div>
-              <div className="flip-card-back absolute inset-0 rounded-2xl border border-slate-200 bg-white flex flex-col items-center justify-center gap-2 px-6 text-center overflow-hidden">
-                <span className="text-2xl mb-1">📊</span>
-                <p className="text-sm font-bold text-slate-800">Comparative Study</p>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  See how IdeaBlocks users explored 2× more images with greater diversity across a
-                  3-day study
-                </p>
-                <span className="text-xs font-semibold mt-2" style={{ color: "#4338CA" }}>
-                  View results →
-                </span>
-              </div>
-            </div>
-          </a>
+        <GuideHint
+          text="Hover each card to jump to the relevant section"
+          className="justify-center mb-4"
+        />
+        <div className="max-w-[860px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-left items-stretch">
+          {tldrCards.map((card) => (
+            <TLDRFlipCard key={card.href} {...card} />
+          ))}
         </div>
+
+        <AbstractToggle />
       </div>
     </section>
+  );
+}
+
+function AbstractToggle() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="max-w-[860px] mx-auto mt-6 text-left">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-slate-600 transition-colors mx-auto"
+      >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          style={{
+            transition: "transform 0.2s",
+            transform: open ? "rotate(90deg)" : "rotate(0deg)",
+          }}
+        >
+          <path
+            d="M4.5 2.5L9.5 7L4.5 11.5"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        Abstract
+      </button>
+
+      <div
+        style={{ display: open ? "block" : "none" }}
+        className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-7 py-6"
+      >
+        <p className="text-[0.9rem] text-slate-600 leading-relaxed mb-5">
+          IdeaBlocks addresses a key challenge in generative AI-assisted design: how to support
+          divergent exploration rather than premature convergence. We decompose{" "}
+          <span className="font-semibold text-slate-800">divergent intent</span> into three
+          components—
+          <span className="font-semibold" style={{ color: "#1D6FEB" }}>
+            Property
+          </span>
+          ,{" "}
+          <span className="font-semibold" style={{ color: "#D4740A" }}>
+            Direction
+          </span>
+          , and{" "}
+          <span className="font-semibold" style={{ color: "#6E30D8" }}>
+            Range
+          </span>
+          —and present a system that enables designers to parametrically control exploration.
+          Through comparative and longitudinal studies, we show that structured intent expression
+          leads to 2.13× more images explored with 12.5% greater visual diversity.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            "divergent intent",
+            "generative AI",
+            "design exploration",
+            "creativity support tools",
+            "human-AI collaboration",
+            "graphic design",
+          ].map((kw) => (
+            <span
+              key={kw}
+              className="text-xs font-medium px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-500"
+            >
+              {kw}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
