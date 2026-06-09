@@ -274,7 +274,7 @@ export const PROPERTY_COLORS: Record<string, string> = {
 };
 
 /** Blue accent for in-demo guide copy and hints */
-export const GUIDE_COLOR = "#1D6FEB";
+export const GUIDE_COLOR = "#5c9dff";
 
 // Style is an image-type property — options are images, not text
 export const STYLE_MANIFEST: Record<string, Record<string, { image: string }[]>> = {
@@ -1474,9 +1474,7 @@ export function PropertyCard({
           transition: "border-color 0.2s",
         }}
       >
-        <span style={{ fontSize: 9, fontWeight: 700, color: "#94a3b8" }}>
-          Exploration History
-        </span>
+        <span style={{ fontSize: 9, fontWeight: 700, color: "#94a3b8" }}>Exploration History</span>
         <PropertyHistoryGraph
           name={name}
           history={history}
@@ -1497,28 +1495,37 @@ const CHAIN_COLOR = "rgba(188,49,234,0.5)";
 
 // ── Connector size tokens ─────────────────────────────────────────────────────
 // Normal (path-level full-size blocks)
-const CHAIN_W  = 100;
-const CHAIN_R  = 8;
-const BENT_H   = 93;   // blockH/2(76.5) + branchGap/2(8) + r(8) — CollapsedBlock ≈153px, gap 16px
-const STROKE   = "1.5";
+const CHAIN_W = 100;
+const CHAIN_R = 8;
+const BENT_H = 93; // blockH/2(76.5) + branchGap/2(8) + r(8) — CollapsedBlock ≈153px, gap 16px
+const STROKE = "1.5";
 // Compact (project-level NodeBlock / modal mini-graphs)
 const CHAIN_W_C = 56;
 const CHAIN_R_C = 5;
-const BENT_H_C  = 26;  // blockH/2(17) + branchGap/2(4) + r(5)  — NodeBlock ≈34px, gap 8px
-const STROKE_C  = "1";
+const BENT_H_C = 26; // blockH/2(17) + branchGap/2(4) + r(5)  — NodeBlock ≈34px, gap 8px
+const STROKE_C = "1";
 
 // ── Straight connector ────────────────────────────────────────────────────────
 export function ChainLink({ compact = false }: { compact?: boolean } = {}) {
-  const r  = compact ? CHAIN_R_C : CHAIN_R;
-  const w  = compact ? CHAIN_W_C : CHAIN_W;
-  const sw = compact ? STROKE_C  : STROKE;
-  const h  = r * 2 + 4;
+  const r = compact ? CHAIN_R_C : CHAIN_R;
+  const w = compact ? CHAIN_W_C : CHAIN_W;
+  const sw = compact ? STROKE_C : STROKE;
+  const h = r * 2 + 4;
   const cy = h / 2;
   return (
-    <div style={{ flexShrink: 0, margin: `0 -${r}px`, display: "flex", alignItems: "center", position: "relative", zIndex: 1 }}>
+    <div
+      style={{
+        flexShrink: 0,
+        margin: `0 -${r}px`,
+        display: "flex",
+        alignItems: "center",
+        position: "relative",
+        zIndex: 1,
+      }}
+    >
       <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} fill="none">
         <line x1={r} y1={cy} x2={w - r} y2={cy} stroke={CHAIN_COLOR} strokeWidth={sw} />
-        <circle cx={r}     cy={cy} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <circle cx={r} cy={cy} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
         <circle cx={w - r} cy={cy} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
       </svg>
     </div>
@@ -1529,22 +1536,34 @@ export function ChainLink({ compact = false }: { compact?: boolean } = {}) {
 // "up"  : from bottom-left → right → up → right → top-right circle
 // "down": from top-left    → right → down → right → bottom-right circle
 // Primary use: standalone bent connection. For branching use BranchLinks.
-export function BentChainLink({ direction, compact = false }: { direction: "up" | "down"; compact?: boolean }) {
-  const r  = compact ? CHAIN_R_C : CHAIN_R;
-  const w  = compact ? CHAIN_W_C : CHAIN_W;
-  const h  = compact ? BENT_H_C  : BENT_H;
-  const sw = compact ? STROKE_C  : STROKE;
+export function BentChainLink({
+  direction,
+  compact = false,
+}: {
+  direction: "up" | "down";
+  compact?: boolean;
+}) {
+  const r = compact ? CHAIN_R_C : CHAIN_R;
+  const w = compact ? CHAIN_W_C : CHAIN_W;
+  const h = compact ? BENT_H_C : BENT_H;
+  const sw = compact ? STROKE_C : STROKE;
   const midX = Math.round(w / 2);
   const isUp = direction === "up";
-  const startY = isUp ? h - r : r;   // source circle y (within bounds)
-  const endY   = isUp ? r     : h - r; // target circle y
+  const startY = isUp ? h - r : r; // source circle y (within bounds)
+  const endY = isUp ? r : h - r; // target circle y
   return (
-    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} fill="none" style={{ display: "block", flexShrink: 0 }}>
-      <line x1={r}    y1={startY} x2={midX} y2={startY} stroke={CHAIN_COLOR} strokeWidth={sw} />
-      <line x1={midX} y1={startY} x2={midX} y2={endY}   stroke={CHAIN_COLOR} strokeWidth={sw} />
-      <line x1={midX} y1={endY}   x2={w - r} y2={endY}  stroke={CHAIN_COLOR} strokeWidth={sw} />
-      <circle cx={r}     cy={startY} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
-      <circle cx={w - r} cy={endY}   r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
+    <svg
+      width={w}
+      height={h}
+      viewBox={`0 0 ${w} ${h}`}
+      fill="none"
+      style={{ display: "block", flexShrink: 0 }}
+    >
+      <line x1={r} y1={startY} x2={midX} y2={startY} stroke={CHAIN_COLOR} strokeWidth={sw} />
+      <line x1={midX} y1={startY} x2={midX} y2={endY} stroke={CHAIN_COLOR} strokeWidth={sw} />
+      <line x1={midX} y1={endY} x2={w - r} y2={endY} stroke={CHAIN_COLOR} strokeWidth={sw} />
+      <circle cx={r} cy={startY} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
+      <circle cx={w - r} cy={endY} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
     </svg>
   );
 }
@@ -1555,32 +1574,52 @@ export function BentChainLink({ direction, compact = false }: { direction: "up" 
 // Up arm   → top-right circle (aligns with upper target block centre).
 // Down arm → bottom-right circle (aligns with lower target block centre).
 export function BranchLinks({ compact = false }: { compact?: boolean }) {
-  const r     = compact ? CHAIN_R_C : CHAIN_R;
-  const w     = compact ? CHAIN_W_C : CHAIN_W;
-  const halfH = compact ? BENT_H_C  : BENT_H;
+  const r = compact ? CHAIN_R_C : CHAIN_R;
+  const w = compact ? CHAIN_W_C : CHAIN_W;
+  const halfH = compact ? BENT_H_C : BENT_H;
   const totalH = halfH * 2;
-  const midX  = Math.round(w / 2);
-  const sw    = compact ? STROKE_C  : STROKE;
+  const midX = Math.round(w / 2);
+  const sw = compact ? STROKE_C : STROKE;
   return (
     <div style={{ flexShrink: 0, margin: `0 -${r}px`, zIndex: 1 }}>
       <svg width={w} height={totalH} fill="none">
         {/* Shared first horizontal: source circle → midX */}
-        <line x1={r}    y1={halfH} x2={midX} y2={halfH} stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <line x1={r} y1={halfH} x2={midX} y2={halfH} stroke={CHAIN_COLOR} strokeWidth={sw} />
         {/* Up arm: vertical up then horizontal right */}
-        <line x1={midX} y1={halfH} x2={midX} y2={r}          stroke={CHAIN_COLOR} strokeWidth={sw} />
-        <line x1={midX} y1={r}     x2={w - r} y2={r}          stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <line x1={midX} y1={halfH} x2={midX} y2={r} stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <line x1={midX} y1={r} x2={w - r} y2={r} stroke={CHAIN_COLOR} strokeWidth={sw} />
         {/* Down arm: vertical down then horizontal right */}
-        <line x1={midX} y1={halfH} x2={midX} y2={totalH - r} stroke={CHAIN_COLOR} strokeWidth={sw} />
-        <line x1={midX} y1={totalH - r} x2={w - r} y2={totalH - r} stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <line
+          x1={midX}
+          y1={halfH}
+          x2={midX}
+          y2={totalH - r}
+          stroke={CHAIN_COLOR}
+          strokeWidth={sw}
+        />
+        <line
+          x1={midX}
+          y1={totalH - r}
+          x2={w - r}
+          y2={totalH - r}
+          stroke={CHAIN_COLOR}
+          strokeWidth={sw}
+        />
         {/* Circles */}
-        <circle cx={r}     cy={halfH}      r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
-        <circle cx={w - r} cy={r}          r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
-        <circle cx={w - r} cy={totalH - r} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <circle cx={r} cy={halfH} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <circle cx={w - r} cy={r} r={r - 1} fill="white" stroke={CHAIN_COLOR} strokeWidth={sw} />
+        <circle
+          cx={w - r}
+          cy={totalH - r}
+          r={r - 1}
+          fill="white"
+          stroke={CHAIN_COLOR}
+          strokeWidth={sw}
+        />
       </svg>
     </div>
   );
 }
-
 
 // ── Block library sidebar (shared / exported) ─────────────────────────────────
 

@@ -9,7 +9,7 @@ import {
   TypicalitySlider,
   BlockNode,
   ResultNode,
-  ChainLink,
+  BranchLinks,
   DemoWrapper,
   GUIDE_COLOR,
   styleImgSrc,
@@ -266,7 +266,7 @@ function StyleBlockNode({
 
 // ── Connect-blocks demo ───────────────────────────────────────────────────────
 
-export function ConnectBlockDemo() {
+function useBranchState() {
   const [direction, setDirection] = useState("");
   const [typicality, setTypicality] = useState(2);
   const [directionChosen, setDirectionChosen] = useState(false);
@@ -275,7 +275,6 @@ export function ConnectBlockDemo() {
   const [result, setResult] = useState({ direction: "", typicality: 2 });
   const [pending, setPending] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const canvasRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (step !== 2 || !direction) return;
@@ -290,19 +289,79 @@ export function ConnectBlockDemo() {
     };
   }, [direction, typicality, step]);
 
+  const explore = () => {
+    setResult({ direction, typicality });
+    setStep(2);
+  };
+
+  return {
+    direction,
+    typicality,
+    directionChosen,
+    typicalityChosen,
+    step,
+    result,
+    pending,
+    setDirection,
+    setTypicality,
+    setDirectionChosen,
+    setTypicalityChosen,
+    setStep,
+    explore,
+  };
+}
+
+export function ConnectBlockDemo() {
+  const a = useBranchState();
+  const b = useBranchState();
+  const canvasRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (step !== 2) return;
+    if (a.step !== 2 && b.step !== 2) return;
     const el = canvasRef.current;
     if (!el) return;
     requestAnimationFrame(() => {
       el.scrollTo({ left: el.scrollWidth - el.clientWidth, behavior: "smooth" });
     });
-  }, [step]);
+  }, [a.step, b.step]);
 
-  const handleExplore = () => {
-    setResult({ direction, typicality });
-    setStep(2);
-  };
+  const renderBranch = (br: ReturnType<typeof useBranchState>) => (
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <StyleBlockNode
+        direction={br.direction}
+        typicality={br.typicality}
+        directionChosen={br.directionChosen}
+        typicalityChosen={br.typicalityChosen}
+        isCollapsed={br.step === 2}
+        onDirectionChange={(d) => {
+          br.setDirection(d);
+          br.setDirectionChosen(true);
+          br.setTypicalityChosen(false);
+        }}
+        onTypicalityChange={(t) => {
+          br.setTypicality(t);
+          br.setTypicalityChosen(true);
+        }}
+        onExplore={br.explore}
+        onExpandClick={() => br.setStep(1)}
+      />
+      {br.step === 2 && (
+        <ResultNode
+          property="Style"
+          direction={br.result.direction || br.direction}
+          typicality={br.result.typicality}
+          loading={br.pending}
+          connector
+          connectorAnimate
+          srcs={
+            [0, 1, 2, 3].map((i) =>
+              chainedStyleImgSrc(br.result.direction || br.direction, br.result.typicality, i),
+            ) as [string, string, string, string]
+          }
+        />
+      )}
+    </div>
+  );
 
   return (
     <DemoWrapper canvasRef={canvasRef}>
@@ -312,12 +371,9 @@ export function ConnectBlockDemo() {
           alignItems: "center",
           margin: "0 auto",
           width: "max-content",
-          transform: "scale(0.8)",
-          transformOrigin: "center center",
-          paddingBottom: 44,
+          zoom: 0.8,
         }}
       >
-        {/* Block 1: locked — caption is absolutely positioned so it doesn't affect row alignment */}
         <div style={{ position: "relative", flexShrink: 0 }}>
           <BlockNode
             property="Character Entity"
@@ -353,7 +409,6 @@ export function ConnectBlockDemo() {
           </p>
         </div>
 
-        {/* Block 1 → Result 1 */}
         <ResultNode
           property="Character Entity"
           direction="Astronaut"
@@ -362,45 +417,12 @@ export function ConnectBlockDemo() {
           connector
         />
 
-        {/* Result 1 → Block 2 */}
-        <ChainLink />
+        <BranchLinks />
 
-        {/* Block 2: Style (image-type), step 1/2 */}
-        <StyleBlockNode
-          direction={direction}
-          typicality={typicality}
-          directionChosen={directionChosen}
-          typicalityChosen={typicalityChosen}
-          isCollapsed={step === 2}
-          onDirectionChange={(d) => {
-            setDirection(d);
-            setDirectionChosen(true);
-            setTypicalityChosen(false);
-          }}
-          onTypicalityChange={(t) => {
-            setTypicality(t);
-            setTypicalityChosen(true);
-          }}
-          onExplore={handleExplore}
-          onExpandClick={() => setStep(1)}
-        />
-
-        {/* Block 2 → Chained result (step 2 only) */}
-        {step === 2 && (
-          <ResultNode
-            property="Style"
-            direction={result.direction || direction}
-            typicality={result.typicality}
-            loading={pending}
-            connector
-            connectorAnimate
-            srcs={
-              [0, 1, 2, 3].map((i) =>
-                chainedStyleImgSrc(result.direction || direction, result.typicality, i),
-              ) as [string, string, string, string]
-            }
-          />
-        )}
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {renderBranch(a)}
+          {renderBranch(b)}
+        </div>
       </div>
     </DemoWrapper>
   );
