@@ -176,7 +176,7 @@ export function Results() {
           ))}
         </div>
 
-        {/* Description panel */}
+        {/* Description panel — visible on hover */}
         <div
           style={{
             minHeight: "3.5rem",
@@ -191,6 +191,16 @@ export function Results() {
               dangerouslySetInnerHTML={{ __html: activeStat.description }}
             />
           )}
+        </div>
+
+        {/* sr-only: all stat descriptions for crawlers */}
+        <div className="sr-only">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <strong>{s.target}{s.suffix} — {s.label}:</strong>{" "}
+              <span dangerouslySetInnerHTML={{ __html: s.description }} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

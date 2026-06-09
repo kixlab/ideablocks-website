@@ -1,6 +1,90 @@
 "use client";
 
 import { useState } from "react";
+
+function PipelineDetails() {
+  const [open, setOpen] = useState(false);
+
+  const steps = [
+    {
+      n: "1",
+      title: "Generates Candidates",
+      desc: "GPT-4o creates alternative directions around your input",
+    },
+    {
+      n: "2",
+      title: "Filters by Typicality",
+      desc: "Uses GloVe (text) or CLIP (images) to measure similarity and match your typicality level",
+    },
+    {
+      n: "3",
+      title: "Clusters & Presents",
+      desc: "Groups similar ideas using K-means and shows the 4 most distinct options",
+    },
+  ];
+
+  return (
+    <div className="mt-4">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-2 text-[0.8125rem] font-medium text-slate-400 hover:text-slate-600 transition-colors"
+      >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          style={{
+            transition: "transform 0.2s",
+            transform: open ? "rotate(90deg)" : "rotate(0deg)",
+          }}
+        >
+          <path
+            d="M4.5 2.5L9.5 7L4.5 11.5"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        How does the pipeline work?
+      </button>
+
+      {open && (
+        <div
+          className="mt-3 rounded-xl border border-slate-100 bg-slate-50 px-5 py-4"
+          style={{ animation: "step2-in 0.18s ease" }}
+        >
+          <p className="text-[0.8125rem] text-slate-500 mb-4">
+            When you set a direction and typicality level, IdeaBlocks:
+          </p>
+          <div className="flex flex-col gap-3">
+            {steps.map((s) => (
+              <div key={s.n} className="flex items-start gap-3">
+                <span
+                  className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"
+                  style={{ background: "#1e293b", marginTop: 1 }}
+                >
+                  {s.n}
+                </span>
+                <p className="text-[0.8125rem] text-slate-600 leading-snug">
+                  <strong className="font-semibold text-slate-800">{s.title}</strong> — {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="sr-only">
+        <p>How the IdeaBlocks pipeline works: When you set a direction and typicality level, IdeaBlocks:</p>
+        {steps.map((s) => (
+          <p key={s.n}>{s.n}. {s.title} — {s.desc}</p>
+        ))}
+      </div>
+    </div>
+  );
+}
 import { CreateBlockDemo } from "./demo/CreateBlockDemo";
 import { ConnectBlockDemo } from "./demo/ConnectBlockDemo";
 import { ReuseBlockDemo } from "./demo/ReuseBlockDemo";
@@ -103,6 +187,8 @@ export function Demo() {
         {activeTab === "create" && <CreateBlockDemo />}
         {activeTab === "connect" && <ConnectBlockDemo />}
         {activeTab === "reuse" && <ReuseBlockDemo />}
+
+        {activeTab === "create" && <PipelineDetails />}
 
         {/* System walkthrough video */}
         <div className="mt-14">

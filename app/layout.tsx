@@ -42,6 +42,49 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${spaceGrotesk.variable} ${nunitoSans.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {/* JSON-LD schema */}
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "IdeaBlocks",
+              description:
+                "Project website for IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI",
+              keywords: ["divergent intent", "generative AI", "design exploration"],
+              mainEntity: {
+                "@type": "ScholarlyArticle",
+                headline:
+                  "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI",
+                author: [
+                  { "@type": "Person", name: "DaEun Choi" },
+                  { "@type": "Person", name: "Kihoon Son" },
+                  { "@type": "Person", name: "Jaesang Yu" },
+                  { "@type": "Person", name: "HyunJoon Jung" },
+                  { "@type": "Person", name: "Juho Kim" },
+                ],
+                datePublished: "2026-06-13",
+                url: "https://arxiv.org/abs/2507.22163",
+                isPartOf: {
+                  "@type": "Event",
+                  name: "ACM Designing Interactive Systems Conference 2026",
+                  alternateName: "DIS 2026",
+                  startDate: "2026-06-13",
+                  endDate: "2026-06-17",
+                  location: {
+                    "@type": "Place",
+                    name: "Singapore",
+                  },
+                  url: "https://dis.acm.org/",
+                },
+              },
+            }),
+          }}
+        />
+      </head>
       <body>
         {children}
         <Script
