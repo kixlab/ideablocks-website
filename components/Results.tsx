@@ -176,30 +176,18 @@ export function Results() {
           ))}
         </div>
 
-        {/* Description panel — visible on hover */}
-        <div
-          style={{
-            minHeight: "3.5rem",
-            opacity: activeStat ? 1 : 0,
-            transition: "opacity 0.22s ease",
-          }}
-        >
-          {activeStat && (
-            <p
-              className="stat-desc text-[1.05rem] leading-relaxed"
-              style={{ color: "#64748b", marginTop: "1rem" }}
-              dangerouslySetInnerHTML={{ __html: activeStat.description }}
-            />
-          )}
-        </div>
-
-        {/* sr-only: all stat descriptions for crawlers */}
-        <div className="sr-only">
+        {/* Description panel */}
+        <div style={{ minHeight: "3.5rem", marginTop: "1rem" }}>
           {stats.map((s) => (
-            <div key={s.label}>
-              <strong>{s.target}{s.suffix} — {s.label}:</strong>{" "}
-              <span dangerouslySetInnerHTML={{ __html: s.description }} />
-            </div>
+            <p
+              key={s.label}
+              className="stat-desc text-[1.05rem] leading-relaxed"
+              style={{
+                color: "#64748b",
+                display: hoveredLabel === s.label ? "block" : "none",
+              }}
+              dangerouslySetInnerHTML={{ __html: s.description }}
+            />
           ))}
         </div>
       </div>

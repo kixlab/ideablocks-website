@@ -50,42 +50,28 @@ function PipelineDetails() {
         How does the pipeline work?
       </button>
 
-      {open && (
-        <div
-          className="mt-3 rounded-xl border border-slate-100 bg-slate-50 px-5 py-4"
-          style={{ animation: "step2-in 0.18s ease" }}
-        >
-          <p className="text-[0.8125rem] text-slate-500 mb-4">
-            When you set a direction and typicality level, IdeaBlocks:
-          </p>
-          <div className="flex flex-col gap-3">
-            {steps.map((s) => (
-              <div key={s.n} className="flex items-start gap-3">
-                <span
-                  className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"
-                  style={{ background: "#1e293b", marginTop: 1 }}
-                >
-                  {s.n}
-                </span>
-                <p className="text-[0.8125rem] text-slate-600 leading-snug">
-                  <strong className="font-semibold text-slate-800">{s.title}</strong> — {s.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className="sr-only">
-        <p>
-          How the IdeaBlocks pipeline works: When you set a direction and typicality level,
-          IdeaBlocks:
+      <div
+        className="mt-3 rounded-xl border border-slate-100 bg-slate-50 px-5 py-4"
+        style={{ display: open ? "block" : "none" }}
+      >
+        <p className="text-[0.8125rem] text-slate-500 mb-4">
+          When you set a direction and typicality level, IdeaBlocks:
         </p>
-        {steps.map((s) => (
-          <p key={s.n}>
-            {s.n}. {s.title} — {s.desc}
-          </p>
-        ))}
+        <div className="flex flex-col gap-3">
+          {steps.map((s) => (
+            <div key={s.n} className="flex items-start gap-3">
+              <span
+                className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"
+                style={{ background: "#1e293b", marginTop: 1 }}
+              >
+                {s.n}
+              </span>
+              <p className="text-[0.8125rem] text-slate-600 leading-snug">
+                <strong className="font-semibold text-slate-800">{s.title}</strong> — {s.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
