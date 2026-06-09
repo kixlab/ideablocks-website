@@ -1,0 +1,372 @@
+{
+  "Scene": {
+    "Starry Night": {
+      "1": [
+        {
+          "text": "Van Gogh swirling night sky",
+          "image": "chained/scene/starry_night/level_1/cluster_0.png"
+        },
+        {
+          "text": "Hilltop under constellations",
+          "image": "chained/scene/starry_night/level_1/cluster_1.png"
+        },
+        {
+          "text": "Moonlit ocean reflection",
+          "image": "chained/scene/starry_night/level_1/cluster_2.png"
+        },
+        {
+          "text": "Night village with glowing stars",
+          "image": "chained/scene/starry_night/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Telescope at observatory dusk",
+          "image": "chained/scene/starry_night/level_2/cluster_0.png"
+        },
+        {
+          "text": "Silhouette bridge at midnight",
+          "image": "chained/scene/starry_night/level_2/cluster_1.png"
+        },
+        {
+          "text": "Rooftop skyline under cosmos",
+          "image": "chained/scene/starry_night/level_2/cluster_2.png"
+        },
+        {
+          "text": "Moonlit sand dunes at night",
+          "image": "chained/scene/starry_night/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Windmill field under night sky",
+          "image": "chained/scene/starry_night/level_3/cluster_0.png"
+        },
+        {
+          "text": "Cliffside watch at nightfall",
+          "image": "chained/scene/starry_night/level_3/cluster_1.png"
+        },
+        {
+          "text": "Forest trail lit by moonlight",
+          "image": "chained/scene/starry_night/level_3/cluster_2.png"
+        },
+        {
+          "text": "River bridge in evening glow",
+          "image": "chained/scene/starry_night/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Owls under stars",
+          "image": "chained/scene/starry_night/level_4/cluster_0.png"
+        },
+        {
+          "text": "Starry temple courtyard",
+          "image": "chained/scene/starry_night/level_4/cluster_1.png"
+        },
+        {
+          "text": "Crescent moon stars",
+          "image": "chained/scene/starry_night/level_4/cluster_2.png"
+        },
+        {
+          "text": "Starfield over plains",
+          "image": "chained/scene/starry_night/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Minimalist skyline",
+          "image": "chained/scene/starry_night/level_5/cluster_0.png"
+        },
+        {
+          "text": "Floating shapes",
+          "image": "chained/scene/starry_night/level_5/cluster_1.png"
+        },
+        {
+          "text": "Pastel horizon",
+          "image": "chained/scene/starry_night/level_5/cluster_2.png"
+        },
+        {
+          "text": "Neon gradient wash",
+          "image": "chained/scene/starry_night/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "City Night": {
+      "1": [
+        {
+          "text": "City skyline at night",
+          "image": "chained/scene/city_night/level_1/cluster_0.png"
+        },
+        {
+          "text": "Neon-lit boulevard",
+          "image": "chained/scene/city_night/level_1/cluster_1.png"
+        },
+        {
+          "text": "City waterfront at night",
+          "image": "chained/scene/city_night/level_1/cluster_2.png"
+        },
+        {
+          "text": "Busy city intersection at night",
+          "image": "chained/scene/city_night/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Rain-soaked city street at night",
+          "image": "chained/scene/city_night/level_2/cluster_0.png"
+        },
+        {
+          "text": "Late night subway station",
+          "image": "chained/scene/city_night/level_2/cluster_1.png"
+        },
+        {
+          "text": "Rooftop cityscape at midnight",
+          "image": "chained/scene/city_night/level_2/cluster_2.png"
+        },
+        {
+          "text": "Foggy city alley at night",
+          "image": "chained/scene/city_night/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Night market alley",
+          "image": "chained/scene/city_night/level_3/cluster_0.png"
+        },
+        {
+          "text": "Empty plaza at 3am",
+          "image": "chained/scene/city_night/level_3/cluster_1.png"
+        },
+        {
+          "text": "City overpass glow",
+          "image": "chained/scene/city_night/level_3/cluster_2.png"
+        },
+        {
+          "text": "Jazz district street at night",
+          "image": "chained/scene/city_night/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Long exposure light trails",
+          "image": "chained/scene/city_night/level_4/cluster_0.png"
+        },
+        {
+          "text": "Monochrome city night",
+          "image": "chained/scene/city_night/level_4/cluster_1.png"
+        },
+        {
+          "text": "Neon geometry abstraction",
+          "image": "chained/scene/city_night/level_4/cluster_2.png"
+        },
+        {
+          "text": "City silhouette",
+          "image": "chained/scene/city_night/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Ghost city at night",
+          "image": "chained/scene/city_night/level_5/cluster_0.png"
+        },
+        {
+          "text": "Floating city dream",
+          "image": "chained/scene/city_night/level_5/cluster_1.png"
+        },
+        {
+          "text": "Bioluminescent cityscape",
+          "image": "chained/scene/city_night/level_5/cluster_2.png"
+        },
+        {
+          "text": "Mirror city reflection",
+          "image": "chained/scene/city_night/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "Cyberpunk City": {
+      "1": [
+        {
+          "text": "Byte-lit skyline",
+          "image": "chained/scene/cyberpunk_city/level_1/cluster_0.png"
+        },
+        {
+          "text": "Neon alley cats",
+          "image": "chained/scene/cyberpunk_city/level_1/cluster_1.png"
+        },
+        {
+          "text": "Cyber hawker towers",
+          "image": "chained/scene/cyberpunk_city/level_1/cluster_2.png"
+        },
+        {
+          "text": "Neon fog street",
+          "image": "chained/scene/cyberpunk_city/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Rain-soaked market stalls",
+          "image": "chained/scene/cyberpunk_city/level_2/cluster_0.png"
+        },
+        {
+          "text": "Glass dome corporate skyline",
+          "image": "chained/scene/cyberpunk_city/level_2/cluster_1.png"
+        },
+        {
+          "text": "Underground hacker den",
+          "image": "chained/scene/cyberpunk_city/level_2/cluster_2.png"
+        },
+        {
+          "text": "Hologram street vendor",
+          "image": "chained/scene/cyberpunk_city/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Bioluminescent alley walls",
+          "image": "chained/scene/cyberpunk_city/level_3/cluster_0.png"
+        },
+        {
+          "text": "Corporate drone swarm overhead",
+          "image": "chained/scene/cyberpunk_city/level_3/cluster_1.png"
+        },
+        {
+          "text": "Augmented reality billboard",
+          "image": "chained/scene/cyberpunk_city/level_3/cluster_2.png"
+        },
+        {
+          "text": "Crowded monorail platform",
+          "image": "chained/scene/cyberpunk_city/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Neon lanterns drift",
+          "image": "chained/scene/cyberpunk_city/level_4/cluster_0.png"
+        },
+        {
+          "text": "Subterranean tunnel glow",
+          "image": "chained/scene/cyberpunk_city/level_4/cluster_1.png"
+        },
+        {
+          "text": "Starry night sky",
+          "image": "chained/scene/cyberpunk_city/level_4/cluster_2.png"
+        },
+        {
+          "text": "Crystal rain reflections",
+          "image": "chained/scene/cyberpunk_city/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Sunrise over hills",
+          "image": "chained/scene/cyberpunk_city/level_5/cluster_0.png"
+        },
+        {
+          "text": "Vapor trails glow",
+          "image": "chained/scene/cyberpunk_city/level_5/cluster_1.png"
+        },
+        {
+          "text": "Ocean cliff edge",
+          "image": "chained/scene/cyberpunk_city/level_5/cluster_2.png"
+        },
+        {
+          "text": "Steel vines climb",
+          "image": "chained/scene/cyberpunk_city/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "Enchanted Forest": {
+      "1": [
+        {
+          "text": "Fairy gate",
+          "image": "chained/scene/enchanted_forest/level_1/cluster_0.png"
+        },
+        {
+          "text": "Misty glade",
+          "image": "chained/scene/enchanted_forest/level_1/cluster_1.png"
+        },
+        {
+          "text": "Enchanted altar",
+          "image": "chained/scene/enchanted_forest/level_1/cluster_2.png"
+        },
+        {
+          "text": "Forest portal",
+          "image": "chained/scene/enchanted_forest/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Glowing fireflies",
+          "image": "chained/scene/enchanted_forest/level_2/cluster_0.png"
+        },
+        {
+          "text": "Moonlit fern",
+          "image": "chained/scene/enchanted_forest/level_2/cluster_1.png"
+        },
+        {
+          "text": "Emerald stream",
+          "image": "chained/scene/enchanted_forest/level_2/cluster_2.png"
+        },
+        {
+          "text": "Dream dew",
+          "image": "chained/scene/enchanted_forest/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Luminous ferns",
+          "image": "chained/scene/enchanted_forest/level_3/cluster_0.png"
+        },
+        {
+          "text": "Glow mushrooms",
+          "image": "chained/scene/enchanted_forest/level_3/cluster_1.png"
+        },
+        {
+          "text": "Crystal dragonfly",
+          "image": "chained/scene/enchanted_forest/level_3/cluster_2.png"
+        },
+        {
+          "text": "Velvet foxfire",
+          "image": "chained/scene/enchanted_forest/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Wisp path",
+          "image": "chained/scene/enchanted_forest/level_4/cluster_0.png"
+        },
+        {
+          "text": "Velvet dusk",
+          "image": "chained/scene/enchanted_forest/level_4/cluster_1.png"
+        },
+        {
+          "text": "Star lanterns",
+          "image": "chained/scene/enchanted_forest/level_4/cluster_2.png"
+        },
+        {
+          "text": "Mossy arch",
+          "image": "chained/scene/enchanted_forest/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Light bokeh",
+          "image": "chained/scene/enchanted_forest/level_5/cluster_0.png"
+        },
+        {
+          "text": "Minimal linework",
+          "image": "chained/scene/enchanted_forest/level_5/cluster_1.png"
+        },
+        {
+          "text": "Hollow stump",
+          "image": "chained/scene/enchanted_forest/level_5/cluster_2.png"
+        },
+        {
+          "text": "Monochrome mood",
+          "image": "chained/scene/enchanted_forest/level_5/cluster_3.png"
+        }
+      ]
+    }
+  }
+}

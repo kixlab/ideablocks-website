@@ -1,0 +1,188 @@
+{
+  "Style": {
+    "Watercolor": {
+      "1": [
+        {
+          "image": "style/watercolor/level_1/cluster_0.png",
+          "score": 0.2488
+        },
+        {
+          "image": "style/watercolor/level_1/cluster_1.png",
+          "score": 0.2594
+        },
+        {
+          "image": "style/watercolor/level_1/cluster_2.png",
+          "score": 0.2876
+        },
+        {
+          "image": "style/watercolor/level_1/cluster_3.png",
+          "score": 0.2751
+        }
+      ],
+      "2": [
+        {
+          "image": "style/watercolor/level_2/cluster_0.png",
+          "score": 0.2438
+        },
+        {
+          "image": "style/watercolor/level_2/cluster_1.png",
+          "score": 0.2415
+        },
+        {
+          "image": "style/watercolor/level_2/cluster_2.png",
+          "score": 0.2418
+        },
+        {
+          "image": "style/watercolor/level_2/cluster_3.png",
+          "score": 0.2357
+        }
+      ],
+      "3": [
+        {
+          "image": "style/watercolor/level_3/cluster_0.png",
+          "score": 0.2249
+        },
+        {
+          "image": "style/watercolor/level_3/cluster_1.png",
+          "score": 0.2315
+        },
+        {
+          "image": "style/watercolor/level_3/cluster_2.png",
+          "score": 0.2288
+        },
+        {
+          "image": "style/watercolor/level_3/cluster_3.png",
+          "score": 0.2264
+        }
+      ],
+      "4": [
+        {
+          "image": "style/watercolor/level_4/cluster_0.png",
+          "score": 0.2191
+        },
+        {
+          "image": "style/watercolor/level_4/cluster_1.png",
+          "score": 0.2187
+        },
+        {
+          "image": "style/watercolor/level_4/cluster_2.png",
+          "score": 0.2238
+        },
+        {
+          "image": "style/watercolor/level_4/cluster_3.png",
+          "score": 0.2201
+        }
+      ],
+      "5": [
+        {
+          "image": "style/watercolor/level_5/cluster_0.png",
+          "score": 0.2148
+        },
+        {
+          "image": "style/watercolor/level_5/cluster_1.png",
+          "score": 0.1903
+        },
+        {
+          "image": "style/watercolor/level_5/cluster_2.png",
+          "score": 0.1981
+        },
+        {
+          "image": "style/watercolor/level_5/cluster_3.png",
+          "score": 0.1987
+        }
+      ]
+    },
+    "Pixel Art": {
+      "1": [
+        {
+          "image": "style/pixel_art/level_1/cluster_0.png",
+          "score": 0.3025
+        },
+        {
+          "image": "style/pixel_art/level_1/cluster_1.png",
+          "score": 0.2996
+        },
+        {
+          "image": "style/pixel_art/level_1/cluster_2.png",
+          "score": 0.3034
+        },
+        {
+          "image": "style/pixel_art/level_1/cluster_3.png",
+          "score": 0.3146
+        }
+      ],
+      "2": [
+        {
+          "image": "style/pixel_art/level_2/cluster_0.png",
+          "score": 0.2925
+        },
+        {
+          "image": "style/pixel_art/level_2/cluster_1.png",
+          "score": 0.2659
+        },
+        {
+          "image": "style/pixel_art/level_2/cluster_2.png",
+          "score": 0.275
+        },
+        {
+          "image": "style/pixel_art/level_2/cluster_3.png",
+          "score": 0.2856
+        }
+      ],
+      "3": [
+        {
+          "image": "style/pixel_art/level_3/cluster_0.png",
+          "score": 0.2577
+        },
+        {
+          "image": "style/pixel_art/level_3/cluster_1.png",
+          "score": 0.2594
+        },
+        {
+          "image": "style/pixel_art/level_3/cluster_2.png",
+          "score": 0.2562
+        },
+        {
+          "image": "style/pixel_art/level_3/cluster_3.png",
+          "score": 0.2526
+        }
+      ],
+      "4": [
+        {
+          "image": "style/pixel_art/level_4/cluster_0.png",
+          "score": 0.2338
+        },
+        {
+          "image": "style/pixel_art/level_4/cluster_1.png",
+          "score": 0.2334
+        },
+        {
+          "image": "style/pixel_art/level_4/cluster_2.png",
+          "score": 0.232
+        },
+        {
+          "image": "style/pixel_art/level_4/cluster_3.png",
+          "score": 0.2259
+        }
+      ],
+      "5": [
+        {
+          "image": "style/pixel_art/level_5/cluster_0.png",
+          "score": 0.2223
+        },
+        {
+          "image": "style/pixel_art/level_5/cluster_1.png",
+          "score": 0.1291
+        },
+        {
+          "image": "style/pixel_art/level_5/cluster_2.png",
+          "score": 0.2202
+        },
+        {
+          "image": "style/pixel_art/level_5/cluster_3.png",
+          "score": 0.2133
+        }
+      ]
+    }
+  }
+}

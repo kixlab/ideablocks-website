@@ -1,0 +1,62 @@
+{
+  "Character Entity": {
+    "Street Musician": {
+      "1": [{"text":"R&B street musician"},{"text":"Guitar busker"},{"text":"Modern street musician"},{"text":"Hoodie street musician"}],
+      "2": [{"text":"Bass guitar busker"},{"text":"String street artist"},{"text":"Violin busker"},{"text":"Sidewalk singer"}],
+      "3": [{"text":"Colorful scarf musician"},{"text":"Busking on steps"},{"text":"Hat wearing busker"},{"text":"Steel-string guitarist"}],
+      "4": [{"text":"Pocket trumpet player"},{"text":"Cozy guitarist"},{"text":"Cajon playing busker"},{"text":"Subway platform musician"}],
+      "5": [{"text":"Mime street performer"},{"text":"Fire juggler busker"},{"text":"Living statue act"},{"text":"Balloon sculptor artist"}]
+    },
+    "Dancer": {
+      "1": [{"text":"Ballet dancer on stage"},{"text":"Contemporary stage dancer"},{"text":"Ballroom dance couple"},{"text":"Folk dancer in costume"}],
+      "2": [{"text":"Jazz dancer"},{"text":"Hip-hop dancer"},{"text":"Flamenco dancer"},{"text":"Tap dancer"}],
+      "3": [{"text":"Breakdancer"},{"text":"Aerial silk dancer"},{"text":"Dance battle"},{"text":"Capoeira performer"}],
+      "4": [{"text":"Butoh performer"},{"text":"Body paint dancer"},{"text":"Ritual movement dancer"},{"text":"Sand dancer"}],
+      "5": [{"text":"Robot dancer"},{"text":"Hologram dancer"},{"text":"Fire dancer"},{"text":"Underwater dancer"}]
+    },
+    "Astronaut": {
+      "1": [{"text":"Rocket scientist"},{"text":"Astro artist"},{"text":"Astronaut kid"},{"text":"Space pilot"}],
+      "2": [{"text":"Lunar mentor"},{"text":"Meteor artist"},{"text":"Starship steward"},{"text":"Cosmic scout"}],
+      "3": [{"text":"Gravity pilot"},{"text":"Cosmic child"},{"text":"Orb explorer"},{"text":"Galaxy kid"}],
+      "4": [{"text":"Sun scout"},{"text":"Comms specialist"},{"text":"Rocket painter"},{"text":"Nebula DJ"}],
+      "5": [{"text":"Red panda hero"},{"text":"Forest sprite"},{"text":"Laser librarian"},{"text":"Wizard guide"}]
+    },
+    "Samurai": {
+      "1": [{"text":"Quiet watch samurai"},{"text":"Silver blade samurai"},{"text":"Dawn lit samurai"},{"text":"Sky spear samurai"}],
+      "2": [{"text":"Silk glove samurai"},{"text":"Sea wind samurai"},{"text":"Pearl shield samurai"},{"text":"Forest stride samurai"}],
+      "3": [{"text":"Night wind samurai"},{"text":"Bronze helm samurai"},{"text":"Sakura dawn samurai"},{"text":"Ember cloak samurai"}],
+      "4": [{"text":"Lantern glow samurai"},{"text":"Glacier blade samurai"},{"text":"Jade koi samurai"},{"text":"Watchful sword master"}],
+      "5": [{"text":"Desert nomad"},{"text":"Sky painter"},{"text":"Silent monk"},{"text":"Silver fox"}]
+    }
+  },
+  "Scene": {
+    "Starry Night": {
+      "1": [{"text":"Van Gogh swirling night sky"},{"text":"Hilltop under constellations"},{"text":"Moonlit ocean reflection"},{"text":"Night village with glowing stars"}],
+      "2": [{"text":"Telescope at observatory dusk"},{"text":"Silhouette bridge at midnight"},{"text":"Rooftop skyline under cosmos"},{"text":"Moonlit sand dunes at night"}],
+      "3": [{"text":"Windmill field under night sky"},{"text":"Cliffside watch at nightfall"},{"text":"Forest trail lit by moonlight"},{"text":"River bridge in evening glow"}],
+      "4": [{"text":"Owls under stars"},{"text":"Starry temple courtyard"},{"text":"Crescent moon stars"},{"text":"Starfield over plains"}],
+      "5": [{"text":"Minimalist skyline"},{"text":"Floating shapes"},{"text":"Pastel horizon"},{"text":"Neon gradient wash"}]
+    },
+    "City Night": {
+      "1": [{"text":"City skyline at night"},{"text":"Neon-lit boulevard"},{"text":"City waterfront at night"},{"text":"Busy city intersection at night"}],
+      "2": [{"text":"Rain-soaked city street at night"},{"text":"Late night subway station"},{"text":"Rooftop cityscape at midnight"},{"text":"Foggy city alley at night"}],
+      "3": [{"text":"Night market alley"},{"text":"Empty plaza at 3am"},{"text":"City overpass glow"},{"text":"Jazz district street at night"}],
+      "4": [{"text":"Long exposure light trails"},{"text":"Monochrome city night"},{"text":"Neon geometry abstraction"},{"text":"City silhouette"}],
+      "5": [{"text":"Ghost city at night"},{"text":"Floating city dream"},{"text":"Bioluminescent cityscape"},{"text":"Mirror city reflection"}]
+    },
+    "Cyberpunk City": {
+      "1": [{"text":"Byte-lit skyline"},{"text":"Neon alley cats"},{"text":"Cyber hawker towers"},{"text":"Neon fog street"}],
+      "2": [{"text":"Rain-soaked market stalls"},{"text":"Glass dome corporate skyline"},{"text":"Underground hacker den"},{"text":"Hologram street vendor"}],
+      "3": [{"text":"Bioluminescent alley walls"},{"text":"Corporate drone swarm overhead"},{"text":"Augmented reality billboard"},{"text":"Crowded monorail platform"}],
+      "4": [{"text":"Neon lanterns drift"},{"text":"Subterranean tunnel glow"},{"text":"Starry night sky"},{"text":"Crystal rain reflections"}],
+      "5": [{"text":"Sunrise over hills"},{"text":"Vapor trails glow"},{"text":"Ocean cliff edge"},{"text":"Steel vines climb"}]
+    },
+    "Enchanted Forest": {
+      "1": [{"text":"Fairy gate"},{"text":"Misty glade"},{"text":"Enchanted altar"},{"text":"Forest portal"}],
+      "2": [{"text":"Glowing fireflies"},{"text":"Moonlit fern"},{"text":"Emerald stream"},{"text":"Dream dew"}],
+      "3": [{"text":"Luminous ferns"},{"text":"Glow mushrooms"},{"text":"Crystal dragonfly"},{"text":"Velvet foxfire"}],
+      "4": [{"text":"Wisp path"},{"text":"Velvet dusk"},{"text":"Star lanterns"},{"text":"Mossy arch"}],
+      "5": [{"text":"Light bokeh"},{"text":"Minimal linework"},{"text":"Hollow stump"},{"text":"Monochrome mood"}]
+    }
+  }
+}

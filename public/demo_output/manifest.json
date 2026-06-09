@@ -1,0 +1,742 @@
+{
+  "Character Entity": {
+    "Street Musician": {
+      "1": [
+        {
+          "text": "R&B street musician",
+          "image": "character_entity/street_musician/level_1/cluster_0.png"
+        },
+        {
+          "text": "Guitar busker",
+          "image": "character_entity/street_musician/level_1/cluster_1.png"
+        },
+        {
+          "text": "Modern street musician",
+          "image": "character_entity/street_musician/level_1/cluster_2.png"
+        },
+        {
+          "text": "Hoodie street musician",
+          "image": "character_entity/street_musician/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Bass guitar busker",
+          "image": "character_entity/street_musician/level_2/cluster_0.png"
+        },
+        {
+          "text": "String street artist",
+          "image": "character_entity/street_musician/level_2/cluster_1.png"
+        },
+        {
+          "text": "Violin busker",
+          "image": "character_entity/street_musician/level_2/cluster_2.png"
+        },
+        {
+          "text": "Sidewalk singer",
+          "image": "character_entity/street_musician/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Colorful scarf musician",
+          "image": "character_entity/street_musician/level_3/cluster_0.png"
+        },
+        {
+          "text": "Busking on steps",
+          "image": "character_entity/street_musician/level_3/cluster_1.png"
+        },
+        {
+          "text": "Hat wearing busker",
+          "image": "character_entity/street_musician/level_3/cluster_2.png"
+        },
+        {
+          "text": "Steel-string guitarist",
+          "image": "character_entity/street_musician/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Pocket trumpet player",
+          "image": "character_entity/street_musician/level_4/cluster_0.png"
+        },
+        {
+          "text": "Cozy guitarist",
+          "image": "character_entity/street_musician/level_4/cluster_1.png"
+        },
+        {
+          "text": "Cajon playing busker",
+          "image": "character_entity/street_musician/level_4/cluster_2.png"
+        },
+        {
+          "text": "Subway platform musician",
+          "image": "character_entity/street_musician/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Mime street performer",
+          "image": "character_entity/street_musician/level_5/cluster_0.png"
+        },
+        {
+          "text": "Fire juggler busker",
+          "image": "character_entity/street_musician/level_5/cluster_1.png"
+        },
+        {
+          "text": "Living statue act",
+          "image": "character_entity/street_musician/level_5/cluster_2.png"
+        },
+        {
+          "text": "Balloon sculptor artist",
+          "image": "character_entity/street_musician/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "Dancer": {
+      "1": [
+        {
+          "text": "Ballet dancer on stage",
+          "image": "character_entity/dancer/level_1/cluster_0.png"
+        },
+        {
+          "text": "Contemporary stage dancer",
+          "image": "character_entity/dancer/level_1/cluster_1.png"
+        },
+        {
+          "text": "Ballroom dance couple",
+          "image": "character_entity/dancer/level_1/cluster_2.png"
+        },
+        {
+          "text": "Folk dancer in costume",
+          "image": "character_entity/dancer/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Jazz dancer",
+          "image": "character_entity/dancer/level_2/cluster_0.png"
+        },
+        {
+          "text": "Hip-hop dancer",
+          "image": "character_entity/dancer/level_2/cluster_1.png"
+        },
+        {
+          "text": "Flamenco dancer",
+          "image": "character_entity/dancer/level_2/cluster_2.png"
+        },
+        {
+          "text": "Tap dancer",
+          "image": "character_entity/dancer/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Breakdancer",
+          "image": "character_entity/dancer/level_3/cluster_0.png"
+        },
+        {
+          "text": "Aerial silk dancer",
+          "image": "character_entity/dancer/level_3/cluster_1.png"
+        },
+        {
+          "text": "Dance battle",
+          "image": "character_entity/dancer/level_3/cluster_2.png"
+        },
+        {
+          "text": "Capoeira performer",
+          "image": "character_entity/dancer/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Butoh performer",
+          "image": "character_entity/dancer/level_4/cluster_0.png"
+        },
+        {
+          "text": "Body paint dancer",
+          "image": "character_entity/dancer/level_4/cluster_1.png"
+        },
+        {
+          "text": "Ritual movement dancer",
+          "image": "character_entity/dancer/level_4/cluster_2.png"
+        },
+        {
+          "text": "Sand dancer",
+          "image": "character_entity/dancer/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Robot dancer",
+          "image": "character_entity/dancer/level_5/cluster_0.png"
+        },
+        {
+          "text": "Hologram dancer",
+          "image": "character_entity/dancer/level_5/cluster_1.png"
+        },
+        {
+          "text": "Fire dancer",
+          "image": "character_entity/dancer/level_5/cluster_2.png"
+        },
+        {
+          "text": "Underwater dancer",
+          "image": "character_entity/dancer/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "Astronaut": {
+      "1": [
+        {
+          "text": "Rocket scientist",
+          "image": "character_entity/astronaut/level_1/cluster_0.png"
+        },
+        {
+          "text": "Astro artist",
+          "image": "character_entity/astronaut/level_1/cluster_1.png"
+        },
+        {
+          "text": "Astronaut kid",
+          "image": "character_entity/astronaut/level_1/cluster_2.png"
+        },
+        {
+          "text": "Space pilot",
+          "image": "character_entity/astronaut/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Lunar mentor",
+          "image": "character_entity/astronaut/level_2/cluster_0.png"
+        },
+        {
+          "text": "Meteor artist",
+          "image": "character_entity/astronaut/level_2/cluster_1.png"
+        },
+        {
+          "text": "Starship steward",
+          "image": "character_entity/astronaut/level_2/cluster_2.png"
+        },
+        {
+          "text": "Cosmic scout",
+          "image": "character_entity/astronaut/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Gravity pilot",
+          "image": "character_entity/astronaut/level_3/cluster_0.png"
+        },
+        {
+          "text": "Cosmic child",
+          "image": "character_entity/astronaut/level_3/cluster_1.png"
+        },
+        {
+          "text": "Orb explorer",
+          "image": "character_entity/astronaut/level_3/cluster_2.png"
+        },
+        {
+          "text": "Galaxy kid",
+          "image": "character_entity/astronaut/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Sun scout",
+          "image": "character_entity/astronaut/level_4/cluster_0.png"
+        },
+        {
+          "text": "Comms specialist",
+          "image": "character_entity/astronaut/level_4/cluster_1.png"
+        },
+        {
+          "text": "Rocket painter",
+          "image": "character_entity/astronaut/level_4/cluster_2.png"
+        },
+        {
+          "text": "Nebula DJ",
+          "image": "character_entity/astronaut/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Red panda hero",
+          "image": "character_entity/astronaut/level_5/cluster_0.png"
+        },
+        {
+          "text": "Forest sprite",
+          "image": "character_entity/astronaut/level_5/cluster_1.png"
+        },
+        {
+          "text": "Laser librarian",
+          "image": "character_entity/astronaut/level_5/cluster_2.png"
+        },
+        {
+          "text": "Wizard guide",
+          "image": "character_entity/astronaut/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "Samurai": {
+      "1": [
+        {
+          "text": "Quiet watch samurai",
+          "image": "character_entity/samurai/level_1/cluster_0.png"
+        },
+        {
+          "text": "Silver blade samurai",
+          "image": "character_entity/samurai/level_1/cluster_1.png"
+        },
+        {
+          "text": "Dawn lit samurai",
+          "image": "character_entity/samurai/level_1/cluster_2.png"
+        },
+        {
+          "text": "Sky spear samurai",
+          "image": "character_entity/samurai/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Silk glove samurai",
+          "image": "character_entity/samurai/level_2/cluster_0.png"
+        },
+        {
+          "text": "Sea wind samurai",
+          "image": "character_entity/samurai/level_2/cluster_1.png"
+        },
+        {
+          "text": "Pearl shield samurai",
+          "image": "character_entity/samurai/level_2/cluster_2.png"
+        },
+        {
+          "text": "Forest stride samurai",
+          "image": "character_entity/samurai/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Night wind samurai",
+          "image": "character_entity/samurai/level_3/cluster_0.png"
+        },
+        {
+          "text": "Bronze helm samurai",
+          "image": "character_entity/samurai/level_3/cluster_1.png"
+        },
+        {
+          "text": "Sakura dawn samurai",
+          "image": "character_entity/samurai/level_3/cluster_2.png"
+        },
+        {
+          "text": "Ember cloak samurai",
+          "image": "character_entity/samurai/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Lantern glow samurai",
+          "image": "character_entity/samurai/level_4/cluster_0.png"
+        },
+        {
+          "text": "Glacier blade samurai",
+          "image": "character_entity/samurai/level_4/cluster_1.png"
+        },
+        {
+          "text": "Jade koi samurai",
+          "image": "character_entity/samurai/level_4/cluster_2.png"
+        },
+        {
+          "text": "Watchful sword master",
+          "image": "character_entity/samurai/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Desert nomad",
+          "image": "character_entity/samurai/level_5/cluster_0.png"
+        },
+        {
+          "text": "Sky painter",
+          "image": "character_entity/samurai/level_5/cluster_1.png"
+        },
+        {
+          "text": "Silent monk",
+          "image": "character_entity/samurai/level_5/cluster_2.png"
+        },
+        {
+          "text": "Silver fox",
+          "image": "character_entity/samurai/level_5/cluster_3.png"
+        }
+      ]
+    }
+  },
+  "Scene": {
+    "Starry Night": {
+      "1": [
+        {
+          "text": "Van Gogh swirling night sky",
+          "image": "scene/starry_night/level_1/cluster_0.png"
+        },
+        {
+          "text": "Hilltop under constellations",
+          "image": "scene/starry_night/level_1/cluster_1.png"
+        },
+        {
+          "text": "Moonlit ocean reflection",
+          "image": "scene/starry_night/level_1/cluster_2.png"
+        },
+        {
+          "text": "Night village with glowing stars",
+          "image": "scene/starry_night/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Telescope at observatory dusk",
+          "image": "scene/starry_night/level_2/cluster_0.png"
+        },
+        {
+          "text": "Silhouette bridge at midnight",
+          "image": "scene/starry_night/level_2/cluster_1.png"
+        },
+        {
+          "text": "Rooftop skyline under cosmos",
+          "image": "scene/starry_night/level_2/cluster_2.png"
+        },
+        {
+          "text": "Moonlit sand dunes at night",
+          "image": "scene/starry_night/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Windmill field under night sky",
+          "image": "scene/starry_night/level_3/cluster_0.png"
+        },
+        {
+          "text": "Cliffside watch at nightfall",
+          "image": "scene/starry_night/level_3/cluster_1.png"
+        },
+        {
+          "text": "Forest trail lit by moonlight",
+          "image": "scene/starry_night/level_3/cluster_2.png"
+        },
+        {
+          "text": "River bridge in evening glow",
+          "image": "scene/starry_night/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Owls under stars",
+          "image": "scene/starry_night/level_4/cluster_0.png"
+        },
+        {
+          "text": "Starry temple courtyard",
+          "image": "scene/starry_night/level_4/cluster_1.png"
+        },
+        {
+          "text": "Crescent moon stars",
+          "image": "scene/starry_night/level_4/cluster_2.png"
+        },
+        {
+          "text": "Starfield over plains",
+          "image": "scene/starry_night/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Minimalist skyline",
+          "image": "scene/starry_night/level_5/cluster_0.png"
+        },
+        {
+          "text": "Floating shapes",
+          "image": "scene/starry_night/level_5/cluster_1.png"
+        },
+        {
+          "text": "Pastel horizon",
+          "image": "scene/starry_night/level_5/cluster_2.png"
+        },
+        {
+          "text": "Neon gradient wash",
+          "image": "scene/starry_night/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "City Night": {
+      "1": [
+        {
+          "text": "City skyline at night",
+          "image": "scene/city_night/level_1/cluster_0.png"
+        },
+        {
+          "text": "Neon-lit boulevard",
+          "image": "scene/city_night/level_1/cluster_1.png"
+        },
+        {
+          "text": "City waterfront at night",
+          "image": "scene/city_night/level_1/cluster_2.png"
+        },
+        {
+          "text": "Busy city intersection at night",
+          "image": "scene/city_night/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Rain-soaked city street at night",
+          "image": "scene/city_night/level_2/cluster_0.png"
+        },
+        {
+          "text": "Late night subway station",
+          "image": "scene/city_night/level_2/cluster_1.png"
+        },
+        {
+          "text": "Rooftop cityscape at midnight",
+          "image": "scene/city_night/level_2/cluster_2.png"
+        },
+        {
+          "text": "Foggy city alley at night",
+          "image": "scene/city_night/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Night market alley",
+          "image": "scene/city_night/level_3/cluster_0.png"
+        },
+        {
+          "text": "Empty plaza at 3am",
+          "image": "scene/city_night/level_3/cluster_1.png"
+        },
+        {
+          "text": "City overpass glow",
+          "image": "scene/city_night/level_3/cluster_2.png"
+        },
+        {
+          "text": "Jazz district street at night",
+          "image": "scene/city_night/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Long exposure light trails",
+          "image": "scene/city_night/level_4/cluster_0.png"
+        },
+        {
+          "text": "Monochrome city night",
+          "image": "scene/city_night/level_4/cluster_1.png"
+        },
+        {
+          "text": "Neon geometry abstraction",
+          "image": "scene/city_night/level_4/cluster_2.png"
+        },
+        {
+          "text": "City silhouette",
+          "image": "scene/city_night/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Ghost city at night",
+          "image": "scene/city_night/level_5/cluster_0.png"
+        },
+        {
+          "text": "Floating city dream",
+          "image": "scene/city_night/level_5/cluster_1.png"
+        },
+        {
+          "text": "Bioluminescent cityscape",
+          "image": "scene/city_night/level_5/cluster_2.png"
+        },
+        {
+          "text": "Mirror city reflection",
+          "image": "scene/city_night/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "Cyberpunk City": {
+      "1": [
+        {
+          "text": "Byte-lit skyline",
+          "image": "scene/cyberpunk_city/level_1/cluster_0.png"
+        },
+        {
+          "text": "Neon alley cats",
+          "image": "scene/cyberpunk_city/level_1/cluster_1.png"
+        },
+        {
+          "text": "Cyber hawker towers",
+          "image": "scene/cyberpunk_city/level_1/cluster_2.png"
+        },
+        {
+          "text": "Neon fog street",
+          "image": "scene/cyberpunk_city/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Rain-soaked market stalls",
+          "image": "scene/cyberpunk_city/level_2/cluster_0.png"
+        },
+        {
+          "text": "Glass dome corporate skyline",
+          "image": "scene/cyberpunk_city/level_2/cluster_1.png"
+        },
+        {
+          "text": "Underground hacker den",
+          "image": "scene/cyberpunk_city/level_2/cluster_2.png"
+        },
+        {
+          "text": "Hologram street vendor",
+          "image": "scene/cyberpunk_city/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Bioluminescent alley walls",
+          "image": "scene/cyberpunk_city/level_3/cluster_0.png"
+        },
+        {
+          "text": "Corporate drone swarm overhead",
+          "image": "scene/cyberpunk_city/level_3/cluster_1.png"
+        },
+        {
+          "text": "Augmented reality billboard",
+          "image": "scene/cyberpunk_city/level_3/cluster_2.png"
+        },
+        {
+          "text": "Crowded monorail platform",
+          "image": "scene/cyberpunk_city/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Neon lanterns drift",
+          "image": "scene/cyberpunk_city/level_4/cluster_0.png"
+        },
+        {
+          "text": "Subterranean tunnel glow",
+          "image": "scene/cyberpunk_city/level_4/cluster_1.png"
+        },
+        {
+          "text": "Starry night sky",
+          "image": "scene/cyberpunk_city/level_4/cluster_2.png"
+        },
+        {
+          "text": "Crystal rain reflections",
+          "image": "scene/cyberpunk_city/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Sunrise over hills",
+          "image": "scene/cyberpunk_city/level_5/cluster_0.png"
+        },
+        {
+          "text": "Vapor trails glow",
+          "image": "scene/cyberpunk_city/level_5/cluster_1.png"
+        },
+        {
+          "text": "Ocean cliff edge",
+          "image": "scene/cyberpunk_city/level_5/cluster_2.png"
+        },
+        {
+          "text": "Steel vines climb",
+          "image": "scene/cyberpunk_city/level_5/cluster_3.png"
+        }
+      ]
+    },
+    "Enchanted Forest": {
+      "1": [
+        {
+          "text": "Fairy gate",
+          "image": "scene/enchanted_forest/level_1/cluster_0.png"
+        },
+        {
+          "text": "Misty glade",
+          "image": "scene/enchanted_forest/level_1/cluster_1.png"
+        },
+        {
+          "text": "Enchanted altar",
+          "image": "scene/enchanted_forest/level_1/cluster_2.png"
+        },
+        {
+          "text": "Forest portal",
+          "image": "scene/enchanted_forest/level_1/cluster_3.png"
+        }
+      ],
+      "2": [
+        {
+          "text": "Glowing fireflies",
+          "image": "scene/enchanted_forest/level_2/cluster_0.png"
+        },
+        {
+          "text": "Moonlit fern",
+          "image": "scene/enchanted_forest/level_2/cluster_1.png"
+        },
+        {
+          "text": "Emerald stream",
+          "image": "scene/enchanted_forest/level_2/cluster_2.png"
+        },
+        {
+          "text": "Dream dew",
+          "image": "scene/enchanted_forest/level_2/cluster_3.png"
+        }
+      ],
+      "3": [
+        {
+          "text": "Luminous ferns",
+          "image": "scene/enchanted_forest/level_3/cluster_0.png"
+        },
+        {
+          "text": "Glow mushrooms",
+          "image": "scene/enchanted_forest/level_3/cluster_1.png"
+        },
+        {
+          "text": "Crystal dragonfly",
+          "image": "scene/enchanted_forest/level_3/cluster_2.png"
+        },
+        {
+          "text": "Velvet foxfire",
+          "image": "scene/enchanted_forest/level_3/cluster_3.png"
+        }
+      ],
+      "4": [
+        {
+          "text": "Wisp path",
+          "image": "scene/enchanted_forest/level_4/cluster_0.png"
+        },
+        {
+          "text": "Velvet dusk",
+          "image": "scene/enchanted_forest/level_4/cluster_1.png"
+        },
+        {
+          "text": "Star lanterns",
+          "image": "scene/enchanted_forest/level_4/cluster_2.png"
+        },
+        {
+          "text": "Mossy arch",
+          "image": "scene/enchanted_forest/level_4/cluster_3.png"
+        }
+      ],
+      "5": [
+        {
+          "text": "Light bokeh",
+          "image": "scene/enchanted_forest/level_5/cluster_0.png"
+        },
+        {
+          "text": "Minimal linework",
+          "image": "scene/enchanted_forest/level_5/cluster_1.png"
+        },
+        {
+          "text": "Hollow stump",
+          "image": "scene/enchanted_forest/level_5/cluster_2.png"
+        },
+        {
+          "text": "Monochrome mood",
+          "image": "scene/enchanted_forest/level_5/cluster_3.png"
+        }
+      ]
+    }
+  }
+}
