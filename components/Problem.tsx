@@ -7,7 +7,7 @@ export function Problem() {
         <p className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-4">
           Motivation
         </p>
-        <h2 className="font-display font-semibold text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.22] text-slate-900 max-w-xl mb-8">
+        <h2 className="font-display font-semibold text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.22] text-slate-900 max-w-2xl mb-8">
           Current Generative AI is optimized for convergence — not exploration.
         </h2>
 

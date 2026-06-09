@@ -49,14 +49,21 @@ const config = {
 function ConeDiagram({
   selected,
   onSelect,
+  rangePos,
 }: {
   selected: Component;
   onSelect: (c: Component) => void;
+  rangePos: number;
 }) {
   const isActive = (c: Component) => selected === c;
   const gray = "#94A3B8";
-  const grayLight = "#C8D0DC"; // used for cone/ellipse default stroke
+  const grayLight = "#C8D0DC";
   const { property: p, direction: d, range: r } = config;
+
+  // Cone half-width driven by slider: narrow (20) at Typical, wide (80) at Atypical
+  const hw = 20 + (rangePos / 100) * 60;
+  const coneLeft = 150 - hw;
+  const coneRight = 150 + hw;
 
   // Layout (viewBox 0 0 300 210):
   // Property  = parallelogram plane in perspective (bottom)
@@ -88,11 +95,11 @@ function ConeDiagram({
 
       {/* ── Range teardrop cone (drawn first so plane overlaps base) ── */}
       <path
-        d="M 85 148 L 150 22 L 215 148 C 215 168, 85 168, 85 148 Z"
+        d={`M ${coneLeft} 148 L 150 22 L ${coneRight} 148 C ${coneRight} 168, ${coneLeft} 168, ${coneLeft} 148 Z`}
         fill={isActive("range") ? "rgba(110,48,216,0.13)" : "rgba(200,192,225,0.18)"}
         stroke={isActive("range") ? r.accent : grayLight}
         strokeWidth={isActive("range") ? 2 : 1.2}
-        style={{ transition: "all 0.25s ease" }}
+        style={{ transition: "d 0.05s ease, fill 0.25s ease, stroke 0.25s ease" }}
       />
 
       {/* ── Property plane (parallelogram, drawn over cone base) ── */}
@@ -108,13 +115,13 @@ function ConeDiagram({
       <ellipse
         cx="150"
         cy="148"
-        rx="65"
+        rx={hw}
         ry="16"
         fill="none"
         stroke={isActive("range") ? r.accent : grayLight}
         strokeWidth={isActive("range") ? 1.8 : 1}
         strokeDasharray="4,3"
-        style={{ transition: "all 0.25s ease" }}
+        style={{ transition: "rx 0.05s ease, stroke 0.25s ease, stroke-width 0.25s ease" }}
       />
 
       {/* ── Direction: initial axis (cone peak → origin) ── */}
@@ -169,7 +176,7 @@ function ConeDiagram({
         onClick={() => onSelect("property")}
       />
       <path
-        d="M 85 148 L 150 22 L 215 148 C 215 168, 85 168, 85 148 Z"
+        d={`M ${coneLeft} 148 L 150 22 L ${coneRight} 148 C ${coneRight} 168, ${coneLeft} 168, ${coneLeft} 148 Z`}
         fill="transparent"
         className="cursor-pointer"
         onClick={() => onSelect("range")}
@@ -243,27 +250,23 @@ function ConeDiagram({
 // ──────────────────────────────────────────────
 // Typicality Slider (visual only)
 // ──────────────────────────────────────────────
-function TypicalitySlider() {
+function TypicalitySlider({ pos, onChange }: { pos: number; onChange: (v: number) => void }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
-  const [pos, setPos] = useState(68); // percentage
 
   const updatePos = (clientX: number) => {
     if (!trackRef.current) return;
     const rect = trackRef.current.getBoundingClientRect();
     const pct = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-    setPos(pct);
+    onChange(pct);
   };
 
   useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      if (dragging.current) updatePos(e.clientX);
-    };
-    const onTouchMove = (e: TouchEvent) => {
-      if (dragging.current) updatePos(e.touches[0].clientX);
-    };
+    const onMove = (e: MouseEvent) => { if (dragging.current) updatePos(e.clientX); };
+    const onTouchMove = (e: TouchEvent) => { if (dragging.current) updatePos(e.touches[0].clientX); };
     const onUp = () => {
       dragging.current = false;
+      document.body.style.userSelect = "";
     };
     window.addEventListener("mousemove", onMove);
     window.addEventListener("touchmove", onTouchMove, { passive: true });
@@ -275,6 +278,7 @@ function TypicalitySlider() {
       window.removeEventListener("mouseup", onUp);
       window.removeEventListener("touchend", onUp);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -293,9 +297,11 @@ function TypicalitySlider() {
           style={{ left: `${pos}%` }}
           onMouseDown={() => {
             dragging.current = true;
+            document.body.style.userSelect = "none";
           }}
           onTouchStart={() => {
             dragging.current = true;
+            document.body.style.userSelect = "none";
           }}
         />
       </div>
@@ -306,7 +312,15 @@ function TypicalitySlider() {
 // ──────────────────────────────────────────────
 // Panel content per component
 // ──────────────────────────────────────────────
-function PanelContent({ component }: { component: Component }) {
+function PanelContent({
+  component,
+  rangePos,
+  onRangeChange,
+}: {
+  component: Component;
+  rangePos: number;
+  onRangeChange: (v: number) => void;
+}) {
   const c = config[component];
 
   return (
@@ -335,10 +349,8 @@ function PanelContent({ component }: { component: Component }) {
         </div>
       )}
 
-      {/* Typicality slider (Range only) */}
-      {component === "range" && <TypicalitySlider />}
+      {component === "range" && <TypicalitySlider pos={rangePos} onChange={onRangeChange} />}
 
-      {/* Formative quote */}
       <blockquote
         className="text-sm italic text-slate-500 pl-3 mt-auto"
         style={{ borderLeft: `3px solid ${c.accent}` }}
@@ -355,6 +367,7 @@ function PanelContent({ component }: { component: Component }) {
 export function PDR() {
   const [selected, setSelected] = useState<Component>("property");
   const [pulseTabs, setPulseTabs] = useState(false);
+  const [rangePos, setRangePos] = useState(68);
 
   useEffect(() => {
     const timer = setTimeout(() => setPulseTabs(true), 1600);
@@ -382,7 +395,7 @@ export function PDR() {
           {/* Left: SVG */}
           <div className="md:sticky" style={{ top: "calc(var(--nav-h) + 24px)" }}>
             <div className="flex justify-center md:justify-start">
-              <ConeDiagram selected={selected} onSelect={setSelected} />
+              <ConeDiagram selected={selected} onSelect={setSelected} rangePos={rangePos} />
             </div>
             <GuideHint text="Click a region to see details." className="text-center md:text-left mt-3" />
           </div>
@@ -391,7 +404,7 @@ export function PDR() {
           <div className="bg-white border border-slate-200 rounded-xl p-7 min-h-[240px] shadow-sm">
             {tabComponents.map((comp) => (
               <div key={comp} style={{ display: comp === selected ? "block" : "none" }}>
-                <PanelContent component={comp} />
+                <PanelContent component={comp} rangePos={rangePos} onRangeChange={setRangePos} />
               </div>
             ))}
           </div>

@@ -77,9 +77,14 @@ function PipelineDetails() {
       )}
 
       <div className="sr-only">
-        <p>How the IdeaBlocks pipeline works: When you set a direction and typicality level, IdeaBlocks:</p>
+        <p>
+          How the IdeaBlocks pipeline works: When you set a direction and typicality level,
+          IdeaBlocks:
+        </p>
         {steps.map((s) => (
-          <p key={s.n}>{s.n}. {s.title} — {s.desc}</p>
+          <p key={s.n}>
+            {s.n}. {s.title} — {s.desc}
+          </p>
         ))}
       </div>
     </div>
@@ -144,7 +149,7 @@ export function Demo() {
         <p className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-4">
           The System
         </p>
-        <h2 className="font-display font-semibold text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.22] text-slate-900 max-w-2xl mb-2">
+        <h2 className="font-display font-semibold text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.22] text-slate-900 mb-2">
           IdeaBlocks lets designers modularize divergent intents into Exploration Blocks — and reuse
           them.
         </h2>

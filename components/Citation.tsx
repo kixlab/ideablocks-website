@@ -42,9 +42,6 @@ export function Citation() {
   return (
     <section id="citation" className="py-16 bg-white">
       <div className="max-w-[1080px] mx-auto px-6">
-        <p className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-4">
-          How to Cite
-        </p>
         <h2 className="font-display font-semibold text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.22] text-slate-900 mb-8">
           Citation
         </h2>
