@@ -1132,6 +1132,7 @@ export function DemoWrapper({
   canvasRef?: Ref<HTMLDivElement>;
 }) {
   const drag = useDragScroll();
+  const [mobileOverlayDismissed, setMobileOverlayDismissed] = useState(false);
 
   // Merge drag ref with optional external ref
   const setRef = (el: HTMLDivElement | null) => {
@@ -1144,6 +1145,7 @@ export function DemoWrapper({
   return (
     <div
       style={{
+        position: "relative",
         borderRadius: 20,
         border: "1.5px solid #e2e8f0",
         background: "white",
@@ -1185,6 +1187,27 @@ export function DemoWrapper({
           </div>
         </div>
       </div>
+
+      {!mobileOverlayDismissed && (
+        <div className="absolute inset-0 z-[10000] flex items-center justify-center px-6 md:hidden">
+          <div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),rgba(248,250,252,0.82)_55%,rgba(241,245,249,0.72))] backdrop-blur-[6px]"
+            aria-hidden="true"
+          />
+          <div className="relative z-10 w-full max-w-md rounded-[24px] border border-slate-200/80 bg-white/90 px-7 py-6 text-center text-slate-900 shadow-[0_24px_80px_rgba(15,23,42,0.10)] backdrop-blur-sm">
+            <p className="text-[0.97rem] font-medium leading-7 text-slate-700">
+              This demo is optimized for desktop.
+            </p>
+            <button
+              type="button"
+              onClick={() => setMobileOverlayDismissed(true)}
+              className="mt-3 inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-transform duration-150 hover:-translate-y-px hover:bg-slate-800"
+            >
+              Run anyway
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

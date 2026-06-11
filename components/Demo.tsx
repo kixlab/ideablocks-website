@@ -123,7 +123,7 @@ export function Demo() {
   const activeTabMeta = TABS.find((t) => t.id === activeTab)!;
 
   return (
-    <section id="demo" className="py-16 bg-white">
+    <section id="demo" className="relative py-16 bg-white">
       <style>{`
         @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
         @keyframes caret-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
@@ -143,43 +143,47 @@ export function Demo() {
           Try out demo of three core features of IdeaBlocks (operating with pre-generated examples).
         </p>
 
-        {/* Tab buttons */}
-        <div className="grid grid-cols-3 gap-3 mb-3">
-          {TABS.map((t) => {
-            const active = activeTab === t.id;
-            return (
-              <button
-                key={t.id}
-                type="button"
-                onClick={() => setActiveTab(t.id)}
-                className="flex items-center justify-center gap-2 rounded-[14px] px-4 py-3.5 text-[13px] font-semibold transition-all duration-[180ms] hover:-translate-y-px"
-                style={{
-                  background: active ? "#1e293b" : "white",
-                  border: `1.5px solid ${active ? "#1e293b" : "#e2e8f0"}`,
-                  boxShadow: active ? "0 4px 18px rgba(0,0,0,0.15)" : "0 1px 4px rgba(0,0,0,0.04)",
-                  color: active ? "white" : "#1e293b",
-                }}
-              >
-                <span className="text-lg leading-none">{t.icon}</span>
-                <span>{t.title}</span>
-              </button>
-            );
-          })}
+        <div className="relative">
+          {/* Tab buttons */}
+          <div className="grid grid-cols-3 gap-3 mb-3">
+            {TABS.map((t) => {
+              const active = activeTab === t.id;
+              return (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => setActiveTab(t.id)}
+                  className="flex items-center justify-center gap-2 rounded-[14px] px-4 py-3.5 text-[13px] font-semibold transition-all duration-[180ms] hover:-translate-y-px"
+                  style={{
+                    background: active ? "#1e293b" : "white",
+                    border: `1.5px solid ${active ? "#1e293b" : "#e2e8f0"}`,
+                    boxShadow: active
+                      ? "0 4px 18px rgba(0,0,0,0.15)"
+                      : "0 1px 4px rgba(0,0,0,0.04)",
+                    color: active ? "white" : "#1e293b",
+                  }}
+                >
+                  <span className="text-lg leading-none">{t.icon}</span>
+                  <span>{t.title}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <p
+            key={activeTab}
+            className="demo-try-hint mb-5 pl-3 text-[0.8125rem] text-slate-500 leading-snug m-0 border-l-2 border-slate-300"
+          >
+            {activeTabMeta.supports} {activeTabMeta.tryInDemo}
+          </p>
+
+          {/* Demo content */}
+          {activeTab === "create" && <CreateBlockDemo />}
+          {activeTab === "connect" && <ConnectBlockDemo />}
+          {activeTab === "reuse" && <ReuseBlockDemo />}
+
+          {activeTab === "create" && <PipelineDetails />}
         </div>
-
-        <p
-          key={activeTab}
-          className="demo-try-hint mb-5 pl-3 text-[0.8125rem] text-slate-500 leading-snug m-0 border-l-2 border-slate-300"
-        >
-          {activeTabMeta.supports} {activeTabMeta.tryInDemo}
-        </p>
-
-        {/* Demo content */}
-        {activeTab === "create" && <CreateBlockDemo />}
-        {activeTab === "connect" && <ConnectBlockDemo />}
-        {activeTab === "reuse" && <ReuseBlockDemo />}
-
-        {activeTab === "create" && <PipelineDetails />}
 
         {/* System walkthrough video */}
         <div className="mt-14">

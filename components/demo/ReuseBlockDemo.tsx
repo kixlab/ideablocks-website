@@ -1,8 +1,17 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { GUIDE_COLOR, BlockLibrarySidebar, useDragScroll } from "./shared";
-import { SubTab, DragState, PathState, ImportState, TooltipInfo, NodeTooltip, guideEase, CursorSVG } from "./reuse-shared";
+import { GUIDE_COLOR, BlockLibrarySidebar, DemoWrapper } from "./shared";
+import {
+  SubTab,
+  DragState,
+  PathState,
+  ImportState,
+  TooltipInfo,
+  NodeTooltip,
+  guideEase,
+  CursorSVG,
+} from "./reuse-shared";
 import { BlockLevelCanvas, REUSE_HISTORY, NODE_TYPICALITY } from "./BlockLevelDemo";
 import { PathLevelCanvas } from "./PathLevelDemo";
 import { ProjectLevelCanvas } from "./ProjectLevelDemo";
@@ -159,76 +168,28 @@ export function ReuseBlockDemo() {
       />
     ) : undefined;
 
-  const canvasDrag = useDragScroll();
-
   return (
-    <div
-      ref={containerRef}
-      style={{
-        borderRadius: 20,
-        border: "1.5px solid #e2e8f0",
-        background: "white",
-        boxShadow: "0 8px 40px rgba(0,0,0,0.07)",
-        overflow: "hidden",
-      }}
-    >
+    <div ref={containerRef}>
       <style>{`@keyframes history-node-pulse { 0%,100%{opacity:.8} 50%{opacity:.2} }`}</style>
 
-      <div style={{ display: "flex" }}>
-        {sidebar}
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            backgroundImage: "radial-gradient(circle, #d1d5db 1px, transparent 1px)",
-            backgroundSize: "22px 22px",
-            minHeight: 440,
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              padding: "14px 20px 0",
-              background: "rgba(255,255,255,0.75)",
-              backdropFilter: "blur(4px)",
-            }}
-          >
-            <ReuseSubTabs active={subTab} onChange={handleTabChange} />
-          </div>
+      <ReuseSubTabs active={subTab} onChange={handleTabChange} />
 
-          <div
-            ref={canvasDrag.ref}
-            onMouseDown={canvasDrag.onMouseDown}
-            onMouseMove={canvasDrag.onMouseMove}
-            onMouseUp={canvasDrag.onMouseUp}
-            onMouseLeave={canvasDrag.onMouseLeave}
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "20px 32px 28px",
-              overflowX: "auto",
-              overflowY: "hidden",
-            }}
-          >
-            {subTab === "block" && (
-              <BlockLevelCanvas
-                dragState={dragState}
-                onDrop={() => setDragState("choosing")}
-                onChoose={(t) => setDragState(`placed-${t}` as DragState)}
-              />
-            )}
-            {subTab === "path" && (
-              <PathLevelCanvas pathState={pathState} onPathStateChange={setPathState} />
-            )}
-            {subTab === "project" && (
-              <ProjectLevelCanvas importState={importState} onImport={setImportState} />
-            )}
-          </div>
-        </div>
+      <div style={{ marginTop: 10 }}>
+        <DemoWrapper sidebar={sidebar}>
+          {subTab === "block" && (
+            <BlockLevelCanvas
+              dragState={dragState}
+              onDrop={() => setDragState("choosing")}
+              onChoose={(t) => setDragState(`placed-${t}` as DragState)}
+            />
+          )}
+          {subTab === "path" && (
+            <PathLevelCanvas pathState={pathState} onPathStateChange={setPathState} />
+          )}
+          {subTab === "project" && (
+            <ProjectLevelCanvas importState={importState} onImport={setImportState} />
+          )}
+        </DemoWrapper>
       </div>
 
       {tooltip && <NodeTooltip info={tooltip} />}
