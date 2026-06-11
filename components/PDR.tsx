@@ -50,12 +50,14 @@ function ConeDiagram({
   selected,
   onSelect,
   rangePos,
+  highlightAll,
 }: {
   selected: Component;
   onSelect: (c: Component) => void;
   rangePos: number;
+  highlightAll: boolean;
 }) {
-  const isActive = (c: Component) => selected === c;
+  const isActive = (c: Component) => highlightAll || selected === c;
   const gray = "#94A3B8";
   const grayLight = "#C8D0DC";
   const { property: p, direction: d, range: r } = config;
@@ -368,6 +370,7 @@ export function PDR() {
   const [selected, setSelected] = useState<Component>("property");
   const [pulseTabs, setPulseTabs] = useState(false);
   const [rangePos, setRangePos] = useState(68);
+  const [highlightAll, setHighlightAll] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setPulseTabs(true), 1600);
@@ -375,6 +378,10 @@ export function PDR() {
   }, []);
 
   const tabComponents: Component[] = ["property", "direction", "range"];
+  const handleSelect = (comp: Component) => {
+    setHighlightAll(false);
+    setSelected(comp);
+  };
 
   return (
     <section id="pdr" className="py-16 bg-paper">
@@ -395,7 +402,26 @@ export function PDR() {
           {/* Left: SVG */}
           <div className="md:sticky" style={{ top: "calc(var(--nav-h) + 24px)" }}>
             <div className="flex justify-center md:justify-start">
-              <ConeDiagram selected={selected} onSelect={setSelected} rangePos={rangePos} />
+              <ConeDiagram
+                selected={selected}
+                onSelect={handleSelect}
+                rangePos={rangePos}
+                highlightAll={highlightAll}
+              />
+            </div>
+            <div className="mt-3 flex justify-center md:justify-start">
+              <button
+                type="button"
+                onClick={() => setHighlightAll((v) => !v)}
+                className="px-3 py-1.5 rounded-full border text-xs font-semibold transition-colors"
+                style={
+                  highlightAll
+                    ? { borderColor: "#1D6FEB", color: "#1D6FEB", background: "#EBF3FF" }
+                    : { borderColor: "#CBD5E1", color: "#64748B", background: "white" }
+                }
+              >
+                {highlightAll ? "전체 강조 끄기" : "세 개 모두 켜기"}
+              </button>
             </div>
             <GuideHint text="Click a region to see details." className="text-center md:text-left mt-3" />
           </div>
@@ -418,7 +444,7 @@ export function PDR() {
             return (
               <button
                 key={comp}
-                onClick={() => setSelected(comp)}
+                onClick={() => handleSelect(comp)}
                 className={`pdr-tab flex items-center gap-2 px-5 py-2.5 rounded-full border-2 text-sm font-semibold transition-all hover:-translate-y-px hover:shadow-sm ${
                   pulseTabs && !isActive ? "animate-tab-pulse" : ""
                 }`}

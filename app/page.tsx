@@ -1,6 +1,7 @@
 import { Hero } from '@/components/Hero'
 import { Problem } from '@/components/Problem'
 import { PDR } from '@/components/PDR'
+import { ReuseDesignSpace } from '@/components/ReuseDesignSpace'
 import { Demo } from '@/components/Demo'
 import { Results } from '@/components/Results'
 import { Findings } from '@/components/Findings'
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Problem />
         <PDR />
+        <ReuseDesignSpace />
         <Demo />
         <Results />
         <Findings />
