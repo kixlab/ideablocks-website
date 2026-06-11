@@ -264,8 +264,12 @@ function TypicalitySlider({ pos, onChange }: { pos: number; onChange: (v: number
   };
 
   useEffect(() => {
-    const onMove = (e: MouseEvent) => { if (dragging.current) updatePos(e.clientX); };
-    const onTouchMove = (e: TouchEvent) => { if (dragging.current) updatePos(e.touches[0].clientX); };
+    const onMove = (e: MouseEvent) => {
+      if (dragging.current) updatePos(e.clientX);
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (dragging.current) updatePos(e.touches[0].clientX);
+    };
     const onUp = () => {
       dragging.current = false;
       document.body.style.userSelect = "";
@@ -280,7 +284,7 @@ function TypicalitySlider({ pos, onChange }: { pos: number; onChange: (v: number
       window.removeEventListener("mouseup", onUp);
       window.removeEventListener("touchend", onUp);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -423,7 +427,10 @@ export function PDR() {
                 {highlightAll ? "전체 강조 끄기" : "세 개 모두 켜기"}
               </button>
             </div>
-            <GuideHint text="Click a region to see details." className="text-center md:text-left mt-3" />
+            <GuideHint
+              text="Click a region to see details."
+              className="text-center md:text-left mt-3"
+            />
           </div>
 
           {/* Right: Description panel */}
