@@ -43,38 +43,23 @@ const config = {
   },
 } as const;
 
-// ──────────────────────────────────────────────
-// Cone SVG
-// ──────────────────────────────────────────────
 function ConeDiagram({
   selected,
   onSelect,
   rangePos,
-  highlightAll,
 }: {
   selected: Component;
   onSelect: (c: Component) => void;
   rangePos: number;
-  highlightAll: boolean;
 }) {
-  const isActive = (c: Component) => highlightAll || selected === c;
+  const isActive = (c: Component) => selected === c;
   const gray = "#94A3B8";
   const grayLight = "#C8D0DC";
   const { property: p, direction: d, range: r } = config;
 
-  // Cone half-width driven by slider: narrow (20) at Typical, wide (80) at Atypical
   const hw = 20 + (rangePos / 100) * 60;
   const coneLeft = 150 - hw;
   const coneRight = 150 + hw;
-
-  // Layout (viewBox 0 0 300 210):
-  // Property  = parallelogram plane in perspective (bottom)
-  // Range     = teardrop cone rising upward from the plane center
-  // Direction = arrow lying on the plane surface
-
-  // Plane corners: TL(72,118) TR(258,118) BR(228,198) BL(42,198)
-  // Cone base ellipse: cx=150, cy=148, rx=65, ry=16
-  // Cone peak: (150, 22)
 
   const FONT = "var(--font-epilogue), sans-serif";
 
@@ -95,7 +80,6 @@ function ConeDiagram({
         </marker>
       </defs>
 
-      {/* ── Range teardrop cone (drawn first so plane overlaps base) ── */}
       <path
         d={`M ${coneLeft} 148 L 150 22 L ${coneRight} 148 C ${coneRight} 168, ${coneLeft} 168, ${coneLeft} 148 Z`}
         fill={isActive("range") ? "rgba(110,48,216,0.13)" : "rgba(200,192,225,0.18)"}
@@ -104,7 +88,6 @@ function ConeDiagram({
         style={{ transition: "d 0.05s ease, fill 0.25s ease, stroke 0.25s ease" }}
       />
 
-      {/* ── Property plane (parallelogram, drawn over cone base) ── */}
       <path
         d="M 42 198 L 72 118 L 258 118 L 228 198 Z"
         fill={isActive("property") ? "rgba(29,111,235,0.09)" : "rgba(200,208,220,0.25)"}
@@ -113,7 +96,6 @@ function ConeDiagram({
         style={{ transition: "all 0.25s ease" }}
       />
 
-      {/* ── Cone base ellipse on the plane surface ── */}
       <ellipse
         cx="150"
         cy="148"
@@ -126,7 +108,6 @@ function ConeDiagram({
         style={{ transition: "rx 0.05s ease, stroke 0.25s ease, stroke-width 0.25s ease" }}
       />
 
-      {/* ── Direction: initial axis (cone peak → origin) ── */}
       <line
         x1="150"
         y1="22"
@@ -138,7 +119,6 @@ function ConeDiagram({
         style={{ transition: "all 0.25s ease" }}
       />
 
-      {/* ── Direction: exploration drift (origin → shifted point on plane) ── */}
       <line
         x1="150"
         y1="148"
@@ -151,7 +131,6 @@ function ConeDiagram({
         style={{ transition: "all 0.25s ease" }}
       />
 
-      {/* ── Origin dot ── */}
       <circle
         cx="150"
         cy="148"
@@ -160,7 +139,6 @@ function ConeDiagram({
         style={{ transition: "fill 0.25s ease" }}
       />
 
-      {/* ── Drift endpoint dot (Direction only) ── */}
       <circle
         cx="90"
         cy="168"
@@ -170,7 +148,6 @@ function ConeDiagram({
         style={{ transition: "all 0.25s ease" }}
       />
 
-      {/* ── Hit areas ── */}
       <path
         d="M 42 198 L 72 118 L 258 118 L 228 198 Z"
         fill="transparent"
@@ -183,7 +160,6 @@ function ConeDiagram({
         className="cursor-pointer"
         onClick={() => onSelect("range")}
       />
-      {/* Direction hit areas drawn last so they sit on top of the cone */}
       <rect
         x="78"
         y="140"
@@ -203,7 +179,6 @@ function ConeDiagram({
         onClick={() => onSelect("direction")}
       />
 
-      {/* ── Labels (drawn last so they sit above hit areas and receive clicks) ── */}
       <text
         x="240"
         y="194"
@@ -249,9 +224,6 @@ function ConeDiagram({
   );
 }
 
-// ──────────────────────────────────────────────
-// Typicality Slider (visual only)
-// ──────────────────────────────────────────────
 function TypicalitySlider({ pos, onChange }: { pos: number; onChange: (v: number) => void }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -284,7 +256,6 @@ function TypicalitySlider({ pos, onChange }: { pos: number; onChange: (v: number
       window.removeEventListener("mouseup", onUp);
       window.removeEventListener("touchend", onUp);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -315,9 +286,6 @@ function TypicalitySlider({ pos, onChange }: { pos: number; onChange: (v: number
   );
 }
 
-// ──────────────────────────────────────────────
-// Panel content per component
-// ──────────────────────────────────────────────
 function PanelContent({
   component,
   rangePos,
@@ -367,14 +335,10 @@ function PanelContent({
   );
 }
 
-// ──────────────────────────────────────────────
-// Main PDR section
-// ──────────────────────────────────────────────
 export function PDR() {
   const [selected, setSelected] = useState<Component>("property");
   const [pulseTabs, setPulseTabs] = useState(false);
   const [rangePos, setRangePos] = useState(68);
-  const [highlightAll, setHighlightAll] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setPulseTabs(true), 1600);
@@ -382,10 +346,7 @@ export function PDR() {
   }, []);
 
   const tabComponents: Component[] = ["property", "direction", "range"];
-  const handleSelect = (comp: Component) => {
-    setHighlightAll(false);
-    setSelected(comp);
-  };
+  const handleSelect = (comp: Component) => setSelected(comp);
 
   return (
     <section id="pdr" className="py-16 bg-paper">
@@ -401,31 +362,14 @@ export function PDR() {
           space a designer intends to explore.
         </p>
 
-        {/* Layout: SVG (left) + Panel (right) */}
         <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8 items-start mb-7">
-          {/* Left: SVG */}
           <div className="md:sticky" style={{ top: "calc(var(--nav-h) + 24px)" }}>
             <div className="flex justify-center md:justify-start">
               <ConeDiagram
                 selected={selected}
                 onSelect={handleSelect}
                 rangePos={rangePos}
-                highlightAll={highlightAll}
               />
-            </div>
-            <div className="mt-3 flex justify-center md:justify-start">
-              <button
-                type="button"
-                onClick={() => setHighlightAll((v) => !v)}
-                className="px-3 py-1.5 rounded-full border text-xs font-semibold transition-colors"
-                style={
-                  highlightAll
-                    ? { borderColor: "#1D6FEB", color: "#1D6FEB", background: "#EBF3FF" }
-                    : { borderColor: "#CBD5E1", color: "#64748B", background: "white" }
-                }
-              >
-                {highlightAll ? "전체 강조 끄기" : "세 개 모두 켜기"}
-              </button>
             </div>
             <GuideHint
               text="Click a region to see details."
@@ -433,7 +377,6 @@ export function PDR() {
             />
           </div>
 
-          {/* Right: Description panel */}
           <div className="bg-white border border-slate-200 rounded-xl p-7 min-h-[240px] shadow-sm">
             {tabComponents.map((comp) => (
               <div key={comp} style={{ display: comp === selected ? "block" : "none" }}>
@@ -443,7 +386,6 @@ export function PDR() {
           </div>
         </div>
 
-        {/* P / D / R Tabs */}
         <div className="flex flex-wrap justify-center gap-3">
           {tabComponents.map((comp) => {
             const c = config[comp];
