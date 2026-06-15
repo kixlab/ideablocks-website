@@ -2,14 +2,22 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const BIBTEX = `@misc{choi2025ideablocks,
-  title={IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI}, 
-  author={DaEun Choi and Kihoon Son and Jaesang Yu and Hyunjoon Jung and Juho Kim},
-  year={2025},
-  eprint={2507.22163},
-  archivePrefix={arXiv},
-  primaryClass={cs.HC},
-  url={https://arxiv.org/abs/2507.22163}, 
+const BIBTEX = `@inproceedings{10.1145/3800645.3813005,
+  author = {Choi, DaEun and Son, Kihoon and Yu, Jaesang and Jung, HyunJoon and Kim, Juho},
+  title = {IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI},
+  year = {2026},
+  isbn = {9798400725630},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3800645.3813005},
+  doi = {10.1145/3800645.3813005},
+  abstract = {While designers increasingly leverage Generative AI for divergent exploration, current interaction is optimized for convergent refinement, forcing users to specify fixed targets rather than open-ended search spaces. Based on a formative study (N=7), we define the anatomy of Divergent Intent, comprising property, direction, and range, and identified two critical barriers: the lack of mechanisms to explicitly shape the parametric boundaries of exploration and the difficulty of reusing successful search strategies. We present IdeaBlocks, where users can modularize divergent intents into Exploration Blocks. Users can reuse prior intents at multiple levels (block, path, and project) with options for literal or context-adaptive reuse. In our comparative study (N=12), participants using IdeaBlocks explored 2.13 times more images with 12.5\\% greater visual diversity than the baseline, demonstrating how structured intent expression and reuse support divergent exploration. A three-day longitudinal study (N=6) further revealed how different reuse mechanisms allowed distinct creative strategies, offering design implications for future intent-aware design support tools.},
+  booktitle = {Proceedings of the 2026 Designing Interactive Systems Conference},
+  pages = {621–642},
+  numpages = {22},
+  keywords = {Creativity support tool, Design exploration, Generative AI, Graphic design, Divergent intent},
+  location = {Singapore, Singapore},
+  series = {DIS '26}
 }`;
 
 export function Citation() {

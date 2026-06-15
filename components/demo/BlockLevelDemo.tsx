@@ -161,6 +161,7 @@ export function BlockLevelCanvas({
         position: "relative",
         width: "100%",
         minHeight: 320,
+        alignSelf: "stretch",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

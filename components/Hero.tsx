@@ -319,16 +319,15 @@ export function Hero() {
             arXiv
           </a>
 
-          <span className="relative group inline-flex cursor-not-allowed">
-            <span className="inline-flex items-center gap-2 px-5 py-2 bg-slate-100 text-slate-400 text-sm font-medium rounded-full border border-slate-200">
-              <FaLink />
-              DL ACM
-            </span>
-            <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-800 px-2.5 py-1.5 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150 shadow-md">
-              Link coming soon
-              <span className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-slate-800" />
-            </span>
-          </span>
+          <a
+            href="https://dl.acm.org/doi/10.1145/3800645.3813005"
+            className="inline-flex items-center gap-2 px-5 py-2 bg-slate-800 text-white text-sm font-semibold rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLink />
+            DL ACM
+          </a>
 
           <span className="relative group inline-flex cursor-not-allowed">
             <span className="inline-flex items-center gap-2 px-5 py-2 bg-slate-100 text-slate-400 text-sm font-medium rounded-full border border-slate-200">

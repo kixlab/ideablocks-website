@@ -252,6 +252,10 @@ export function NodeTooltip({ info }: { info: Exclude<TooltipInfo, null> }) {
                 background: `${color}08`,
                 border: `1px solid ${color}20`,
                 lineHeight: 1.35,
+                textAlign: "center",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               {text}
