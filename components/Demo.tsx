@@ -163,7 +163,7 @@ export function Demo() {
                     color: active ? "white" : "#1e293b",
                   }}
                 >
-                  <span className="text-lg leading-none">{t.icon}</span>
+                  <span className="hidden sm:inline text-lg leading-none">{t.icon}</span>
                   <span>{t.title}</span>
                 </button>
               );

@@ -297,9 +297,9 @@ export function Hero() {
         </h1>
 
         {/* Author cards */}
-        <div className="flex flex-wrap justify-center gap-3 mb-6">
+        <div className="grid grid-cols-6 sm:flex sm:flex-wrap justify-center gap-3 mb-6 [&>*]:col-span-2 [&>*:nth-child(4)]:col-start-2">
           {authors.map(({ name, affiliation, href, photo }) => (
-            <a key={name} href={href} className="flex flex-col items-center w-28">
+            <a key={name} href={href} className="flex flex-col items-center sm:w-28">
               <AuthorAvatar name={name} photo={photo} />
               <span className="text-sm font-medium text-slate-700 leading-snug mt-2">{name}</span>
               <span className="text-xs text-slate-400 leading-snug">{affiliation}</span>
@@ -308,10 +308,10 @@ export function Hero() {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-nowrap justify-center gap-2 sm:gap-3 mb-10">
           <a
             href="https://arxiv.org/abs/2507.22163"
-            className="inline-flex items-center gap-2 px-5 py-2 bg-slate-800 text-white text-sm font-semibold rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 bg-slate-800 text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -321,7 +321,7 @@ export function Hero() {
 
           <a
             href="https://dl.acm.org/doi/10.1145/3800645.3813005"
-            className="inline-flex items-center gap-2 px-5 py-2 bg-slate-800 text-white text-sm font-semibold rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 bg-slate-800 text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -330,7 +330,7 @@ export function Hero() {
           </a>
 
           <span className="relative group inline-flex cursor-not-allowed">
-            <span className="inline-flex items-center gap-2 px-5 py-2 bg-slate-100 text-slate-400 text-sm font-medium rounded-full border border-slate-200">
+            <span className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 bg-slate-100 text-slate-400 text-xs sm:text-sm font-medium rounded-full border border-slate-200">
               <FaGithub />
               GitHub
             </span>
