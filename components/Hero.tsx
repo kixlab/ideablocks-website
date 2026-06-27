@@ -43,7 +43,7 @@ const authors = [
   {
     name: "Jaesang Yu",
     affiliation: "KAIST",
-    href: "#",
+    href: "https://www.linkedin.com/in/jaesangyu/",
     photo: "/assets/authors/jaesang.jpg",
   },
   {
@@ -224,7 +224,17 @@ export function Hero() {
         {/* Venue */}
         <div className="flex justify-center items-center gap-2 mb-5">
           <span
-            className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase"
+            className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold"
+            style={{
+              background: "#F1F5F9",
+              border: "1px solid #CBD5E1",
+              color: "#64748B",
+            }}
+          >
+            ACM UIST 2025 Demo
+          </span>
+          <span
+            className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold"
             style={{
               background: "linear-gradient(90deg, #DBEAFE, #EDE9FE)",
               border: "1px solid #A5B4FC",
@@ -311,7 +321,7 @@ export function Hero() {
         <div className="flex flex-nowrap justify-center gap-2 sm:gap-3 mb-10">
           <a
             href="https://arxiv.org/abs/2507.22163"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 bg-slate-800 text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-slate-800 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -321,16 +331,26 @@ export function Hero() {
 
           <a
             href="https://dl.acm.org/doi/10.1145/3800645.3813005"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 bg-slate-800 text-white text-xs sm:text-sm font-semibold rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-slate-800 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLink />
-            DL ACM
+            DL ACM (Full Paper)
+          </a>
+
+          <a
+            href="https://dl.acm.org/doi/10.1145/3746058.3759001"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-slate-800 text-white text-xs font-medium rounded-full hover:bg-slate-700 transition-all hover:-translate-y-px shadow-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLink />
+            DL ACM (Demo Paper)
           </a>
 
           <span className="relative group inline-flex cursor-not-allowed">
-            <span className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 bg-slate-100 text-slate-400 text-xs sm:text-sm font-medium rounded-full border border-slate-200">
+            <span className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 bg-slate-100 text-slate-400 text-xs font-medium rounded-full border border-slate-200">
               <FaGithub />
               GitHub
             </span>
