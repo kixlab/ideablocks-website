@@ -25,13 +25,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IdeaBlocks",
+  title: "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration",
   description:
-    "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI. Published at ACM DIS 2026.",
+    "A research website showcasing IdeaBlocks, a full paper published at ACM DIS 2026 on generative graphic design exploration.",
   openGraph: {
-    title: "IdeaBlocks",
+    title: "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration",
     description:
-      "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI. Published at ACM DIS 2026.",
+      "A research website showcasing IdeaBlocks, a full paper published at ACM DIS 2026 on generative graphic design exploration.",
     type: "website",
   },
 };
