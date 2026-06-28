@@ -84,14 +84,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-      </head>
-      <body>
-        {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FNN2SJPZGW"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -99,7 +96,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-FNN2SJPZGW');
           `}
         </Script>
-      </body>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
