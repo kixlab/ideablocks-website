@@ -43,7 +43,7 @@ const authors = [
   {
     name: "Jaesang Yu",
     affiliation: "KAIST",
-    href: "https://www.linkedin.com/in/jaesangyu/",
+    href: "https://www.jaesangyu.com/",
     photo: "/assets/authors/jaesang.jpg",
   },
   {
